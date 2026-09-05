@@ -13,7 +13,8 @@
       --bg-light: #f8f9fa;
       --text-dark: #2c3e50;
       --text-muted: #6c757d;
-      --font-main: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      /* Fuentes similares a Times New Roman */
+      --font-main: 'Times New Roman', Times, Baskerville, Georgia, serif;
     }
 
     * {
@@ -43,7 +44,7 @@
     }
 
     .main-logo {
-      height: 50px;
+      height: 55px;
       width: auto;
       object-fit: contain;
     }
@@ -52,7 +53,8 @@
       margin-left: 2rem;
       text-decoration: none;
       color: var(--text-dark);
-      font-weight: 500;
+      font-weight: bold;
+      font-size: 1.1rem;
       transition: color 0.3s ease;
     }
 
@@ -67,7 +69,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-image: url('ChatGPT Image 4 sept 2026, 05_51_13 p.m..png');
+      background-image: url('https://i.postimg.cc/zX2GKtm6/Chat-GPT-Image-4-sept-2026-05-51-13-p-m.png');
       background-size: cover;
       background-position: center;
       text-align: center;
@@ -80,7 +82,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.45); /* Capa de transparencia oscura para dar contraste */
+      background: rgba(0, 0, 0, 0.45); /* Capa de transparencia oscura para contraste */
       z-index: 1;
     }
 
@@ -92,15 +94,16 @@
     }
 
     .hero-title {
-      font-size: 3.5rem;
+      font-size: 3.8rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
       letter-spacing: 1px;
     }
 
     .hero-subtitle {
-      font-size: 1.5rem;
-      font-weight: 300;
+      font-size: 1.75rem;
+      font-weight: 400;
+      font-style: italic;
       opacity: 0.95;
     }
 
@@ -115,7 +118,7 @@
     }
 
     .section-logo {
-      height: 60px;
+      height: 65px;
       width: auto;
       margin-bottom: 1rem;
       display: block;
@@ -124,14 +127,15 @@
     }
 
     .content-section h2 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 1rem;
     }
 
     .content-section p {
       color: var(--text-muted);
-      max-width: 600px;
+      max-width: 650px;
       margin: 0 auto;
+      font-size: 1.15rem;
     }
 
     /* Pie de Página FOOTER */
@@ -143,25 +147,25 @@
     }
 
     .footer-motto {
-      font-size: 1.25rem;
-      font-weight: 600;
+      font-size: 1.4rem;
+      font-weight: bold;
+      font-style: italic;
       color: var(--primary-color);
       margin-bottom: 0.5rem;
       letter-spacing: 0.5px;
     }
 
     .footer-copy {
-      font-size: 0.875rem;
+      font-size: 0.95rem;
       color: var(--text-muted);
     }
   </style>
 </head>
 <body>
 
-  <!-- Encabezado con Logo Principal -->
   <header class="header">
     <div class="logo-container">
-      <img src="Fundacion_Jatcet_logo_estatico.jpeg" alt="Logo Fundación JATCET" class="main-logo">
+      <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="main-logo">
     </div>
     <nav class="nav-links">
       <a href="#inicio">Inicio</a>
@@ -170,7 +174,6 @@
     </nav>
   </header>
 
-  <!-- Banner Principal con fondo de imagen transparente -->
   <section id="inicio" class="hero-section">
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -179,22 +182,20 @@
     </div>
   </section>
 
-  <!-- Sección de contenido -->
   <main class="main-content">
     <section id="nosotros" class="content-section">
-      <img src="Fundacion_Jatcet_logo_estatico.jpeg" alt="Logo Fundación JATCET" class="section-logo">
+      <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="section-logo">
       <h2>Sobre Nosotros</h2>
       <p>Bienvenido a la Fundación JATCET. Ofrecemos un espacio de apoyo, contención y rehabilitación integral para la comunidad.</p>
     </section>
 
     <section id="contacto" class="content-section">
-      <img src="Fundacion_Jatcet_logo_estatico.jpeg" alt="Logo Fundación JATCET" class="section-logo">
+      <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="section-logo">
       <h2>Contacto</h2>
       <p>Estamos aquí para escucharte y acompañarte en todo momento.</p>
     </section>
   </main>
 
-  <!-- Pie de Página -->
   <footer class="footer">
     <p class="footer-motto">Justo A Tiempo Creo En Ti</p>
     <p class="footer-copy">&copy; 2026 Fundación JATCET. Todos los derechos reservados.</p>
