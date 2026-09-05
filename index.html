@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fundación JATCET</title>
-  
+
+  <!-- Optimización de Red: Preconexión a servidor de recursos externos -->
+  <link rel="preconnect" href="https://i.postimg.cc" crossorigin>
+  <link rel="dns-prefetch" href="https://i.postimg.cc">
+
   <style>
     /* Variables y Estilos Generales Minimalistas */
     :root {
@@ -13,7 +17,6 @@
       --bg-light: #f8f9fa;
       --text-dark: #2c3e50;
       --text-muted: #6c757d;
-      /* Fuentes similares a Times New Roman */
       --font-main: 'Times New Roman', Times, Baskerville, Georgia, serif;
     }
 
@@ -82,7 +85,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.45); /* Capa de transparencia oscura para contraste */
+      background: rgba(0, 0, 0, 0.45);
       z-index: 1;
     }
 
@@ -115,6 +118,9 @@
     .content-section {
       margin-bottom: 5rem;
       text-align: center;
+      /* Optimización de renderizado: el navegador no procesa la sección hasta que entra a pantalla */
+      content-visibility: auto;
+      contain-intrinsic-size: 300px;
     }
 
     .section-logo {
@@ -163,9 +169,10 @@
 </head>
 <body>
 
+  <!-- Encabezado con Logo Principal -->
   <header class="header">
     <div class="logo-container">
-      <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="main-logo">
+      <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="main-logo" width="150" height="55" loading="eager">
     </div>
     <nav class="nav-links">
       <a href="#inicio">Inicio</a>
@@ -174,6 +181,7 @@
     </nav>
   </header>
 
+  <!-- Banner Principal -->
   <section id="inicio" class="hero-section">
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -182,27 +190,29 @@
     </div>
   </section>
 
+  <!-- Sección de contenido -->
   <main class="main-content">
     <section id="nosotros" class="content-section">
-      <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="section-logo">
+      <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="section-logo" width="150" height="65" loading="lazy">
       <h2>Sobre Nosotros</h2>
       <p>Bienvenido a la Fundación JATCET. Ofrecemos un espacio de apoyo, contención y rehabilitación integral para la comunidad.</p>
     </section>
 
     <section id="contacto" class="content-section">
-      <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="section-logo">
+      <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="section-logo" width="150" height="65" loading="lazy">
       <h2>Contacto</h2>
       <p>Estamos aquí para escucharte y acompañarte en todo momento.</p>
     </section>
   </main>
 
+  <!-- Pie de Página -->
   <footer class="footer">
     <p class="footer-motto">Justo A Tiempo Creo En Ti</p>
     <p class="footer-copy">&copy; 2026 Fundación JATCET. Todos los derechos reservados.</p>
   </footer>
 
   <script>
-    // Script base para desplazamiento suave
+    // Script optimizado para desplazamiento suave
     document.addEventListener('DOMContentLoaded', () => {
       const links = document.querySelectorAll('.nav-links a');
 
