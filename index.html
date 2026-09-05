@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fundación JATCET</title>
+  <title>Fundación JATCET - Inicio</title>
 
-  <!-- Optimización de Red: Preconexión a servidor de recursos externos -->
+  <!-- Optimización de Red -->
   <link rel="preconnect" href="https://i.postimg.cc" crossorigin>
   <link rel="dns-prefetch" href="https://i.postimg.cc">
 
   <style>
-    /* Variables y Estilos Generales Minimalistas */
     :root {
       --primary-color: #1a1a1a;
       --accent-color: #0088cc;
@@ -61,14 +60,15 @@
       transition: color 0.3s ease;
     }
 
-    .nav-links a:hover {
+    .nav-links a:hover, .nav-links a.active {
       color: var(--accent-color);
     }
 
     /* Banner Principal HERO */
     .hero-section {
       position: relative;
-      height: 80vh;
+      height: calc(100vh - 170px);
+      min-height: 450px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -110,40 +110,6 @@
       opacity: 0.95;
     }
 
-    /* Secciones Generales */
-    .main-content {
-      padding: 4rem 10%;
-    }
-
-    .content-section {
-      margin-bottom: 5rem;
-      text-align: center;
-      /* Optimización de renderizado: el navegador no procesa la sección hasta que entra a pantalla */
-      content-visibility: auto;
-      contain-intrinsic-size: 300px;
-    }
-
-    .section-logo {
-      height: 65px;
-      width: auto;
-      margin-bottom: 1rem;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .content-section h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-    }
-
-    .content-section p {
-      color: var(--text-muted);
-      max-width: 650px;
-      margin: 0 auto;
-      font-size: 1.15rem;
-    }
-
     /* Pie de Página FOOTER */
     .footer {
       background-color: var(--bg-light);
@@ -172,36 +138,25 @@
   <!-- Encabezado con Logo Principal -->
   <header class="header">
     <div class="logo-container">
-      <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="main-logo" width="150" height="55" loading="eager">
+      <a href="index.html">
+        <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="main-logo" width="150" height="55" loading="eager">
+      </a>
     </div>
     <nav class="nav-links">
-      <a href="#inicio">Inicio</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#contacto">Contacto</a>
+      <a href="index.html" class="active">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contacto.html">Contacto</a>
     </nav>
   </header>
 
-  <!-- Banner Principal -->
-  <section id="inicio" class="hero-section">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1 class="hero-title">Fundación JATCET</h1>
-      <p class="hero-subtitle">Centro de Acompañamiento y Rehabilitación</p>
-    </div>
-  </section>
-
-  <!-- Sección de contenido -->
-  <main class="main-content">
-    <section id="nosotros" class="content-section">
-      <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="section-logo" width="150" height="65" loading="lazy">
-      <h2>Sobre Nosotros</h2>
-      <p>Bienvenido a la Fundación JATCET. Ofrecemos un espacio de apoyo, contención y rehabilitación integral para la comunidad.</p>
-    </section>
-
-    <section id="contacto" class="content-section">
-      <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="section-logo" width="150" height="65" loading="lazy">
-      <h2>Contacto</h2>
-      <p>Estamos aquí para escucharte y acompañarte en todo momento.</p>
+  <!-- Banner Principal Único para Inicio -->
+  <main>
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Fundación JATCET</h1>
+        <p class="hero-subtitle">Centro de Acompañamiento y Rehabilitación</p>
+      </div>
     </section>
   </main>
 
@@ -211,25 +166,5 @@
     <p class="footer-copy">&copy; 2026 Fundación JATCET. Todos los derechos reservados.</p>
   </footer>
 
-  <script>
-    // Script optimizado para desplazamiento suave
-    document.addEventListener('DOMContentLoaded', () => {
-      const links = document.querySelectorAll('.nav-links a');
-
-      links.forEach(link => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          const targetId = link.getAttribute('href').substring(1);
-          const targetSection = document.getElementById(targetId);
-
-          if (targetSection) {
-            targetSection.scrollIntoView({
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
-    });
-  </script>
 </body>
 </html>
