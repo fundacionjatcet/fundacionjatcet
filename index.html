@@ -174,6 +174,49 @@
       color: #f0f0f0;
     }
 
+    /* Sección Bajo el Banner (Inicio) */
+    .approach-section {
+      padding: 4rem 5%;
+      background-color: #ffffff;
+    }
+
+    .approach-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .approach-title {
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    .approach-card {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      padding: 2.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .approach-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .approach-card-text {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: #ffffff;
+    }
+
     /* Pantallas Secundarias */
     .page-container {
       padding: 3rem 10%;
@@ -343,7 +386,7 @@
 
     /* Responsividad */
     @media (max-width: 900px) {
-      .hero-container {
+      .hero-container, .approach-container {
         grid-template-columns: 1fr;
         gap: 2rem;
       }
@@ -354,6 +397,10 @@
 
       .hero-acronym-meaning {
         font-size: 1.3rem;
+      }
+
+      .approach-title {
+        font-size: 2.2rem;
       }
     }
   </style>
@@ -374,6 +421,8 @@
 
   <!-- PANTALLA 1: INICIO -->
   <main id="inicio" class="page-screen active">
+    
+    <!-- Banner Principal -->
     <section class="hero-section">
       <div class="hero-overlay"></div>
       <div class="hero-container">
@@ -398,6 +447,21 @@
 
       </div>
     </section>
+
+    <!-- Sección Bajo el Banner -->
+    <section class="approach-section">
+      <div class="approach-container">
+        <h2 class="approach-title">
+          Un enfoque de recuperación centrado en la persona.
+        </h2>
+        <div class="approach-card">
+          <p class="approach-card-text">
+            En JATCET creemos que cada persona puede abrir una nueva etapa de bienestar. Por eso diseñamos un acompañamiento cercano, respetuoso y realista, pensado para acompañar la recuperación sin juzgar ni estigmatizar.
+          </p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- PANTALLA 2: SOBRE NOSOTROS -->
