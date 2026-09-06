@@ -9,6 +9,11 @@
   <link rel="preconnect" href="https://i.postimg.cc" crossorigin>
   <link rel="dns-prefetch" href="https://i.postimg.cc">
 
+  <!-- Carga de tipografía moderna sans-serif (Inter) similar a la imagen -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --primary-color: #1a1a1a;
@@ -18,7 +23,7 @@
       --text-dark: #2c3e50;
       --text-muted: #6c757d;
       --border-color: #cccccc;
-      --font-main: 'Times New Roman', Times, Baskerville, Georgia, serif;
+      --font-main: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     }
 
     * {
@@ -32,6 +37,8 @@
       color: var(--text-dark);
       background-color: #ffffff;
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     /* Encabezado NAVEGACIÓN */
@@ -62,17 +69,17 @@
 
     .logo-text {
       font-size: 1.8rem;
-      font-weight: bold;
+      font-weight: 800;
       color: var(--primary-color);
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
     }
 
     .nav-links a {
       margin-left: 2rem;
       text-decoration: none;
       color: var(--text-dark);
-      font-weight: bold;
-      font-size: 1.1rem;
+      font-weight: 600;
+      font-size: 1.05rem;
       transition: color 0.3s ease;
       cursor: pointer;
     }
@@ -109,7 +116,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.72); /* Transparencia ajustada para mejor contraste */
+      background: rgba(0, 0, 0, 0.72);
       z-index: 1;
     }
 
@@ -132,26 +139,26 @@
 
     .hero-title-main {
       font-size: 5rem;
-      font-weight: 700;
+      font-weight: 800;
       line-height: 1;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       text-transform: uppercase;
     }
 
     .hero-acronym-meaning {
-      font-size: 1.6rem;
-      font-style: italic;
-      font-weight: 400;
-      margin-top: 0.2rem;
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-top: 0.4rem;
       margin-bottom: 2rem;
       opacity: 0.95;
     }
 
     .hero-subtitle {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       line-height: 1.6;
       max-width: 650px;
       opacity: 0.9;
+      font-weight: 400;
     }
 
     /* Columna Derecha del Banner Principal */
@@ -166,7 +173,7 @@
 
     .hero-right-title {
       font-size: 1.8rem;
-      font-weight: bold;
+      font-weight: 700;
       margin-bottom: 0.8rem;
       color: #ffffff;
       border-bottom: 2px solid var(--accent-color);
@@ -175,16 +182,17 @@
     }
 
     .hero-right-subtitle {
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       font-weight: 600;
       margin-bottom: 1rem;
       color: #e0e0e0;
     }
 
     .hero-right-text {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       line-height: 1.6;
       color: #f0f0f0;
+      font-weight: 400;
     }
 
     /* Banners de Cabecera con Transparencia y Texto (Nosotros y Contacto) */
@@ -206,7 +214,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.72); /* Transparencia ajustada para mejor contraste */
+      background: rgba(0, 0, 0, 0.72);
       z-index: 1;
     }
 
@@ -221,28 +229,29 @@
     }
 
     .banner-pretitle {
-      font-size: 1rem;
-      font-weight: bold;
+      font-size: 0.95rem;
+      font-weight: 700;
       text-transform: uppercase;
       color: #38b6ff;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
       margin-bottom: 0.3rem;
       display: block;
     }
 
     .banner-title {
       font-size: 2.5rem;
-      font-weight: bold;
+      font-weight: 800;
       line-height: 1.1;
       margin-bottom: 0.5rem;
       color: #ffffff;
     }
 
     .banner-subtitle {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       max-width: 750px;
       opacity: 0.95;
-      line-height: 1.4;
+      line-height: 1.5;
+      font-weight: 400;
     }
 
     /* Sección Sobre JATCET Bajo el Banner (Inicio) */
@@ -265,18 +274,18 @@
     }
 
     .approach-pretitle {
-      font-size: 1.2rem;
-      font-weight: bold;
+      font-size: 1.1rem;
+      font-weight: 700;
       text-transform: uppercase;
       color: var(--accent-color);
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
       margin-bottom: 0.5rem;
       display: block;
     }
 
     .approach-title {
-      font-size: 2.8rem;
-      font-weight: bold;
+      font-size: 2.5rem;
+      font-weight: 800;
       color: var(--primary-color);
       line-height: 1.2;
     }
@@ -296,9 +305,10 @@
     }
 
     .approach-card-text {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       line-height: 1.7;
       color: #ffffff;
+      font-weight: 400;
     }
 
     /* Sección Valores */
@@ -343,8 +353,8 @@
     }
 
     .valor-card-number {
-      font-size: 1rem;
-      font-weight: bold;
+      font-size: 0.95rem;
+      font-weight: 700;
       color: #ffffff;
       background-color: var(--accent-color);
       width: 32px;
@@ -357,15 +367,17 @@
     }
 
     .valor-card-title {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
+      font-weight: 700;
       color: var(--primary-color);
       margin-bottom: 0.8rem;
     }
 
     .valor-card-text {
       color: var(--text-dark);
-      font-size: 1.05rem;
+      font-size: 1rem;
       line-height: 1.6;
+      font-weight: 400;
     }
 
     /* Sección Proceso */
@@ -412,7 +424,7 @@
     .proceso-card-badge {
       display: inline-block;
       font-size: 0.85rem;
-      font-weight: bold;
+      font-weight: 700;
       color: #ffffff;
       background-color: var(--accent-color);
       padding: 0.25rem 0.75rem;
@@ -421,15 +433,17 @@
     }
 
     .proceso-card-title {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
+      font-weight: 700;
       color: var(--primary-color);
       margin-bottom: 0.8rem;
     }
 
     .proceso-card-text {
       color: var(--text-dark);
-      font-size: 1rem;
+      font-size: 0.95rem;
       line-height: 1.5;
+      font-weight: 400;
     }
 
     /* Sección: Preguntas Frecuentes */
@@ -483,10 +497,10 @@
     }
 
     .faq-question-title {
-      font-size: 1.35rem;
+      font-size: 1.25rem;
       color: var(--primary-color);
-      font-weight: bold;
-      line-height: 1.3;
+      font-weight: 700;
+      line-height: 1.35;
       margin: 0;
     }
 
@@ -500,8 +514,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.4rem;
-      font-weight: bold;
+      font-size: 1.3rem;
+      font-weight: 700;
       line-height: 1;
       transition: background-color 0.3s ease, transform 0.3s ease;
       user-select: none;
@@ -529,8 +543,9 @@
 
     .faq-answer-text {
       color: var(--text-dark);
-      font-size: 1.05rem;
+      font-size: 1rem;
       line-height: 1.6;
+      font-weight: 400;
     }
 
     /* SECCIÓN: BANNER CTA */
@@ -569,7 +584,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.72); /* Transparencia ajustada para mejor contraste */
+      background: rgba(0, 0, 0, 0.72);
       z-index: 2;
     }
 
@@ -590,8 +605,8 @@
     }
 
     .cta-banner-pretitle {
-      font-size: 1.1rem;
-      font-weight: bold;
+      font-size: 1rem;
+      font-weight: 700;
       text-transform: uppercase;
       color: #38b6ff;
       letter-spacing: 1.5px;
@@ -600,8 +615,8 @@
     }
 
     .cta-banner-title {
-      font-size: 2.2rem;
-      font-weight: bold;
+      font-size: 2rem;
+      font-weight: 800;
       color: #ffffff;
       line-height: 1.25;
       margin: 0;
@@ -611,8 +626,8 @@
       background-color: var(--accent-color);
       color: #ffffff;
       font-family: var(--font-main);
-      font-size: 1.15rem;
-      font-weight: bold;
+      font-size: 1.1rem;
+      font-weight: 700;
       padding: 0.9rem 2.2rem;
       border: none;
       border-radius: 8px;
@@ -656,7 +671,8 @@
     }
 
     .title-box .page-title {
-      font-size: 2.2rem;
+      font-size: 2rem;
+      font-weight: 800;
       color: var(--primary-color);
       margin: 0;
       line-height: 1.2;
@@ -664,6 +680,7 @@
 
     .nosotros-content {
       display: flex;
+      flex-direction: flex-direction;
       flex-direction: column;
       gap: 2rem;
     }
@@ -678,8 +695,8 @@
     }
 
     .intro-card p {
-      font-size: 1.5rem;
-      font-weight: bold;
+      font-size: 1.4rem;
+      font-weight: 700;
       color: var(--primary-color);
       margin: 0;
     }
@@ -707,7 +724,8 @@
     }
 
     .card-title {
-      font-size: 1.8rem;
+      font-size: 1.7rem;
+      font-weight: 700;
       color: var(--primary-color);
       margin-bottom: 1rem;
       position: relative;
@@ -720,9 +738,10 @@
       bottom: 0;
       left: 0;
       width: 40px;
-      height: 2px;
+      height: 3px;
       background-color: var(--accent-color);
       transition: width 0.3s ease;
+      border-radius: 2px;
     }
 
     .info-card:hover .card-title::after {
@@ -731,8 +750,9 @@
 
     .card-text {
       color: var(--text-dark);
-      font-size: 1.05rem;
+      font-size: 1rem;
       line-height: 1.6;
+      font-weight: 400;
     }
 
     /* Estructura para la sección CONTACTO */
@@ -761,7 +781,8 @@
     }
 
     .section-column-title {
-      font-size: 2rem;
+      font-size: 1.8rem;
+      font-weight: 800;
       color: var(--primary-color);
       margin-bottom: 1.5rem;
       border-bottom: 2px solid var(--accent-color);
@@ -775,9 +796,9 @@
 
     .form-group label {
       display: block;
-      font-weight: bold;
+      font-weight: 600;
       margin-bottom: 0.5rem;
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: var(--text-dark);
     }
 
@@ -816,8 +837,8 @@
       background-color: var(--primary-color);
       color: #ffffff;
       font-family: var(--font-main);
-      font-size: 1.1rem;
-      font-weight: bold;
+      font-size: 1.05rem;
+      font-weight: 700;
       border: none;
       border-radius: 6px;
       cursor: pointer;
@@ -837,15 +858,17 @@
     }
 
     .contact-info-item h3 {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
+      font-weight: 700;
       color: var(--accent-color);
       margin-bottom: 0.3rem;
     }
 
     .contact-info-item p {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: var(--text-dark);
       line-height: 1.5;
+      font-weight: 400;
     }
 
     /* Sección Mapa Visítanos */
@@ -881,9 +904,8 @@
     }
 
     .footer-motto {
-      font-size: 1.4rem;
-      font-weight: bold;
-      font-style: italic;
+      font-size: 1.3rem;
+      font-weight: 700;
       color: var(--primary-color);
       margin-bottom: 0.5rem;
       letter-spacing: 0.5px;
@@ -892,6 +914,7 @@
     .footer-copy {
       font-size: 0.95rem;
       color: var(--text-muted);
+      font-weight: 400;
     }
 
     /* Responsividad Adaptable */
@@ -919,7 +942,7 @@
       }
 
       .cta-banner-title {
-        font-size: 1.75rem;
+        font-size: 1.6rem;
       }
 
       .hero-title-main {
@@ -927,11 +950,11 @@
       }
 
       .hero-acronym-meaning {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
       }
 
       .approach-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
       }
 
       .banner-title {
