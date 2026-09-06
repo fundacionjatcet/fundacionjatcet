@@ -219,20 +219,20 @@
 
     /* Estructura para la sección SOBRE NOSOTROS */
     .nosotros-layout {
-      max-width: 1200px;
+      max-width: 1350px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 0.3fr 0.7fr;
-      gap: 3rem;
+      grid-template-columns: 0.2fr 0.8fr;
+      gap: 2.5rem;
       align-items: start;
       text-align: left;
     }
 
-    /* Recuadro Izquierdo del Título (Solo texto) */
+    /* Recuadro Izquierdo del Título */
     .title-box {
       background-color: var(--bg-light);
       color: var(--text-dark);
-      padding: 2.5rem 2rem;
+      padding: 2.5rem 1.5rem;
       border-radius: 12px;
       border: 1px solid #e9ecef;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -246,9 +246,10 @@
     }
 
     .title-box .page-title {
-      font-size: 2.3rem;
+      font-size: 2.2rem;
       color: var(--primary-color);
       margin: 0;
+      line-height: 1.2;
     }
 
     /* Columna Derecha: Desarrollo de Contenidos */
@@ -273,16 +274,17 @@
       margin: 0;
     }
 
-    /* Recuadros Misión y Visión Organizados en Horizontal */
+    /* Recuadros Misión y Visión Organizados en Horizontal con mayor ancho */
     .cards-horizontal {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
+      width: 100%;
     }
 
     .info-card {
       background-color: var(--bg-light);
-      padding: 2.5rem;
+      padding: 2.2rem 2.5rem;
       border-radius: 12px;
       border: 1px solid #e9ecef;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -320,25 +322,36 @@
 
     .card-text {
       color: var(--text-dark);
-      font-size: 1.1rem;
-      line-height: 1.7;
+      font-size: 1.05rem;
+      line-height: 1.6;
     }
 
-    /* Formulario Dinámico de Contacto */
-    .page-container {
-      padding: 3rem 10%;
-      min-height: calc(100vh - 200px);
-      text-align: center;
-    }
-
-    .contact-form-container {
-      max-width: 650px;
+    /* Estructura para la sección CONTACTO (2 Divisiones Verticales) */
+    .contacto-layout {
+      max-width: 1200px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+      text-align: left;
+    }
+
+    .contacto-card {
       background-color: var(--bg-light);
       padding: 2.5rem;
-      border-radius: 8px;
+      border-radius: 12px;
+      border: 1px solid #e9ecef;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      text-align: left;
+    }
+
+    .section-column-title {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 0.5rem;
+      display: inline-block;
     }
 
     .form-group {
@@ -359,7 +372,7 @@
       font-family: var(--font-main);
       font-size: 1rem;
       border: 1px solid var(--border-color);
-      border-radius: 4px;
+      border-radius: 6px;
       background-color: #ffffff;
       transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
@@ -372,7 +385,14 @@
 
     textarea.form-control {
       resize: vertical;
-      min-height: 120px;
+      min-height: 140px;
+    }
+
+    .char-counter {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-align: right;
+      margin-top: 0.3rem;
     }
 
     .submit-btn {
@@ -384,13 +404,33 @@
       font-size: 1.1rem;
       font-weight: bold;
       border: none;
-      border-radius: 4px;
+      border-radius: 6px;
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
 
     .submit-btn:hover {
       background-color: var(--accent-color);
+    }
+
+    /* Lista de Información de Contacto */
+    .contact-info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .contact-info-item h3 {
+      font-size: 1.2rem;
+      color: var(--accent-color);
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-info-item p {
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      line-height: 1.5;
     }
 
     /* Pie de Página FOOTER */
@@ -416,8 +456,15 @@
     }
 
     /* Responsividad */
-    @media (max-width: 900px) {
-      .hero-container, .approach-container, .nosotros-layout, .cards-horizontal {
+    @media (max-width: 992px) {
+      .nosotros-layout, .contacto-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-container, .approach-container, .cards-horizontal {
         grid-template-columns: 1fr;
         gap: 2rem;
       }
@@ -496,7 +543,7 @@
   </main>
 
   <!-- PANTALLA 2: SOBRE NOSOTROS -->
-  <main id="nosotros" class="page-screen" style="padding: 4rem 5%;">
+  <main id="nosotros" class="page-screen" style="padding: 4rem 4%;">
     <div class="nosotros-layout">
       
       <!-- Costado Izquierdo: Solo Título en Recuadro -->
@@ -504,7 +551,7 @@
         <h1 class="page-title">Sobre Nosotros</h1>
       </div>
 
-      <!-- Costado Derecho: Texto Secundario y Recuadros Dinámicos -->
+      <!-- Costado Derecho: Texto Secundario y Recuadros Anchos -->
       <div class="nosotros-content">
         
         <!-- Texto Secundario en Recuadro -->
@@ -514,7 +561,7 @@
           </p>
         </div>
 
-        <!-- Recuadros Dinámicos de Misión y Visión en Horizontal -->
+        <!-- Recuadros Dinámicos de Misión y Visión más Anchos en Horizontal -->
         <div class="cards-horizontal">
           <div class="info-card">
             <h2 class="card-title">Misión</h2>
@@ -537,50 +584,65 @@
   </main>
 
   <!-- PANTALLA 3: CONTACTO -->
-  <main id="contacto" class="page-screen">
-    <div class="page-container">
-      <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="section-logo" width="150" height="65" loading="lazy">
-      <h1 class="page-title">Contacto</h1>
-      <p class="page-description">
-        Estamos aquí para escucharte. Déjanos tus datos y consulta para brindarte una pronta respuesta de parte de nuestro equipo.
-      </p>
-
-      <!-- Cuadros Dinámicos de Contacto Conectados al Correo -->
-      <div class="contact-form-container">
-        <form action="https://formsubmit.co/fundaciónjatcet@gmail.com" method="POST">
-          
-          <!-- Configuraciones invisibles para el envío -->
-          <input type="hidden" name="_subject" value="Nueva consulta desde la web - Fundación JATCET">
+  <main id="contacto" class="page-screen" style="padding: 4rem 5%;">
+    <div class="contacto-layout">
+      
+      <!-- 1° División Izquierda: Solicita Información -->
+      <div class="contacto-card">
+        <h2 class="section-column-title">Solicita Información</h2>
+        
+        <form action="https://formsubmit.co/fundacionjatcet@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Nueva solicitud de información - Fundación JATCET">
           <input type="hidden" name="_captcha" value="false">
 
           <div class="form-group">
-            <label for="nombre">Nombre Completo *</label>
-            <input type="text" id="nombre" name="Nombre" class="form-control" placeholder="Ej: María González" required>
+            <label for="nombre">Nombre *</label>
+            <input type="text" id="nombre" name="Nombre" class="form-control" placeholder="Tu nombre" required>
           </div>
 
           <div class="form-group">
             <label for="email">Correo Electrónico *</label>
-            <input type="email" id="email" name="Correo" class="form-control" placeholder="ejemplo@correo.com" required>
+            <input type="email" id="email" name="Correo" class="form-control" placeholder="tu@email.com" required>
           </div>
 
           <div class="form-group">
-            <label for="telefono">Teléfono de Contacto</label>
-            <input type="tel" id="telefono" name="Telefono" class="form-control" placeholder="+56 9 1234 5678">
+            <label for="mensaje">Mensaje *</label>
+            <textarea id="mensaje" name="Mensaje" class="form-control" maxlength="1000" placeholder="Escribe tu mensaje aquí..." required oninput="updateCharCount(this)"></textarea>
+            <div class="char-counter"><span id="char-count">0</span> / 1000 caracteres</div>
           </div>
 
-          <div class="form-group">
-            <label for="asunto">Asunto / Motivo de Consulta *</label>
-            <input type="text" id="asunto" name="Asunto" class="form-control" placeholder="Ej: Información sobre programas de apoyo" required>
-          </div>
-
-          <div class="form-group">
-            <label for="mensaje">Consulta o Mensaje *</label>
-            <textarea id="mensaje" name="Mensaje" class="form-control" placeholder="Escribe aquí tu mensaje..." required></textarea>
-          </div>
-
-          <button type="submit" class="submit-btn">Enviar Consulta</button>
+          <button type="submit" class="submit-btn">Enviar Mensaje</button>
         </form>
       </div>
+
+      <!-- 2° División Derecha: Información de Contacto -->
+      <div class="contacto-card">
+        <h2 class="section-column-title">Información de contacto</h2>
+        
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <h3>Dirección</h3>
+            <p>San Martirian #668, Isla de Maipo</p>
+          </div>
+
+          <div class="contact-info-item">
+            <h3>Teléfono</h3>
+            <p></p>
+          </div>
+
+          <div class="contact-info-item">
+            <h3>Email</h3>
+            <p>fundacionjatcet@gmail.com</p>
+          </div>
+
+          <div class="contact-info-item">
+            <h3>Horario de Atención</h3>
+            <p><strong>Lunes a Viernes:</strong> 09:00 a 20:00 horas</p>
+            <p><strong>Sábado:</strong> 10:00 a 17:00 horas</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </main>
 
@@ -610,6 +672,14 @@
       }
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Contador de caracteres para el textarea de mensaje
+    function updateCharCount(textarea) {
+      const charCountSpan = document.getElementById('char-count');
+      if (charCountSpan) {
+        charCountSpan.textContent = textarea.value.length;
+      }
     }
   </script>
 </body>
