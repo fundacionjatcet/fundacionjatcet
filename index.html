@@ -326,10 +326,16 @@
       line-height: 1.6;
     }
 
-    /* Estructura para la sección CONTACTO (2 Divisiones Verticales) */
-    .contacto-layout {
+    /* Estructura para la sección CONTACTO */
+    .contacto-wrapper {
       max-width: 1200px;
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .contacto-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 3rem;
@@ -433,6 +439,30 @@
       line-height: 1.5;
     }
 
+    /* Sección Mapa Visítanos */
+    .map-section {
+      background-color: var(--bg-light);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid #e9ecef;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      text-align: left;
+    }
+
+    .map-container {
+      width: 100%;
+      height: 400px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     /* Pie de Página FOOTER */
     .footer {
       background-color: var(--bg-light);
@@ -479,6 +509,10 @@
 
       .approach-title {
         font-size: 2.2rem;
+      }
+
+      .map-container {
+        height: 300px;
       }
     }
   </style>
@@ -585,61 +619,79 @@
 
   <!-- PANTALLA 3: CONTACTO -->
   <main id="contacto" class="page-screen" style="padding: 4rem 5%;">
-    <div class="contacto-layout">
+    <div class="contacto-wrapper">
       
-      <!-- 1° División Izquierda: Solicita Información -->
-      <div class="contacto-card">
-        <h2 class="section-column-title">Solicita Información</h2>
+      <!-- Bloque Superior: Formulario e Información -->
+      <div class="contacto-layout">
         
-        <form action="https://formsubmit.co/fundacionjatcet@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="Nueva solicitud de información - Fundación JATCET">
-          <input type="hidden" name="_captcha" value="false">
+        <!-- 1° División Izquierda: Solicita Información -->
+        <div class="contacto-card">
+          <h2 class="section-column-title">Solicita Información</h2>
+          
+          <form action="https://formsubmit.co/fundacionjatcet@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Nueva solicitud de información - Fundación JATCET">
+            <input type="hidden" name="_captcha" value="false">
 
-          <div class="form-group">
-            <label for="nombre">Nombre *</label>
-            <input type="text" id="nombre" name="Nombre" class="form-control" placeholder="Tu nombre" required>
+            <div class="form-group">
+              <label for="nombre">Nombre *</label>
+              <input type="text" id="nombre" name="Nombre" class="form-control" placeholder="Tu nombre" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Correo Electrónico *</label>
+              <input type="email" id="email" name="Correo" class="form-control" placeholder="tu@email.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="mensaje">Mensaje *</label>
+              <textarea id="mensaje" name="Mensaje" class="form-control" maxlength="1000" placeholder="Escribe tu mensaje aquí..." required oninput="updateCharCount(this)"></textarea>
+              <div class="char-counter"><span id="char-count">0</span> / 1000 caracteres</div>
+            </div>
+
+            <button type="submit" class="submit-btn">Enviar Mensaje</button>
+          </form>
+        </div>
+
+        <!-- 2° División Derecha: Información de Contacto -->
+        <div class="contacto-card">
+          <h2 class="section-column-title">Información de contacto</h2>
+          
+          <div class="contact-info-list">
+            <div class="contact-info-item">
+              <h3>Dirección</h3>
+              <p>San Martirian #668, Isla de Maipo</p>
+            </div>
+
+            <div class="contact-info-item">
+              <h3>Teléfono</h3>
+              <p></p>
+            </div>
+
+            <div class="contact-info-item">
+              <h3>Email</h3>
+              <p>fundacionjatcet@gmail.com</p>
+            </div>
+
+            <div class="contact-info-item">
+              <h3>Horario de Atención</h3>
+              <p><strong>Lunes a Viernes:</strong> 09:00 a 20:00 horas</p>
+              <p><strong>Sábado:</strong> 10:00 a 17:00 horas</p>
+            </div>
           </div>
+        </div>
 
-          <div class="form-group">
-            <label for="email">Correo Electrónico *</label>
-            <input type="email" id="email" name="Correo" class="form-control" placeholder="tu@email.com" required>
-          </div>
-
-          <div class="form-group">
-            <label for="mensaje">Mensaje *</label>
-            <textarea id="mensaje" name="Mensaje" class="form-control" maxlength="1000" placeholder="Escribe tu mensaje aquí..." required oninput="updateCharCount(this)"></textarea>
-            <div class="char-counter"><span id="char-count">0</span> / 1000 caracteres</div>
-          </div>
-
-          <button type="submit" class="submit-btn">Enviar Mensaje</button>
-        </form>
       </div>
 
-      <!-- 2° División Derecha: Información de Contacto -->
-      <div class="contacto-card">
-        <h2 class="section-column-title">Información de contacto</h2>
-        
-        <div class="contact-info-list">
-          <div class="contact-info-item">
-            <h3>Dirección</h3>
-            <p>San Martirian #668, Isla de Maipo</p>
-          </div>
-
-          <div class="contact-info-item">
-            <h3>Teléfono</h3>
-            <p></p>
-          </div>
-
-          <div class="contact-info-item">
-            <h3>Email</h3>
-            <p>fundacionjatcet@gmail.com</p>
-          </div>
-
-          <div class="contact-info-item">
-            <h3>Horario de Atención</h3>
-            <p><strong>Lunes a Viernes:</strong> 09:00 a 20:00 horas</p>
-            <p><strong>Sábado:</strong> 10:00 a 17:00 horas</p>
-          </div>
+      <!-- Bloque Inferior: Visítanos y Mapa Interactivo -->
+      <div class="map-section">
+        <h2 class="section-column-title">Visítanos</h2>
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.458804618764!2d-70.8988!3d-33.7538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x966318e805555555%3A0x0!2sSan%20Martirian%20668%2C%20Isla%20de%20Maipo%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1710000000000!5m2!1ses!2scl" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
       </div>
 
