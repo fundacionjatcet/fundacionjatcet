@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fundación JATCET - Inicio</title>
+  <title>Fundación JATCET</title>
 
   <!-- Optimización de Red -->
   <link rel="preconnect" href="https://i.postimg.cc" crossorigin>
@@ -49,6 +49,7 @@
       height: 55px;
       width: auto;
       object-fit: contain;
+      cursor: pointer;
     }
 
     .nav-links a {
@@ -58,13 +59,23 @@
       font-weight: bold;
       font-size: 1.1rem;
       transition: color 0.3s ease;
+      cursor: pointer;
     }
 
     .nav-links a:hover, .nav-links a.active {
       color: var(--accent-color);
     }
 
-    /* Banner Principal HERO */
+    /* Control de Visibilidad de Pantallas */
+    .page-screen {
+      display: none;
+    }
+
+    .page-screen.active {
+      display: block;
+    }
+
+    /* Pantalla 1: Banner Principal HERO (Inicio) */
     .hero-section {
       position: relative;
       height: calc(100vh - 170px);
@@ -110,6 +121,34 @@
       opacity: 0.95;
     }
 
+    /* Pantallas Secundarias (Sobre Nosotros y Contacto) */
+    .page-container {
+      padding: 4rem 10%;
+      min-height: calc(100vh - 200px);
+      text-align: center;
+    }
+
+    .section-logo {
+      height: 65px;
+      width: auto;
+      margin-bottom: 1.5rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .page-title {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .page-description {
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+    }
+
     /* Pie de Página FOOTER */
     .footer {
       background-color: var(--bg-light);
@@ -138,19 +177,17 @@
   <!-- Encabezado con Logo Principal -->
   <header class="header">
     <div class="logo-container">
-      <a href="index.html">
-        <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="main-logo" width="150" height="55" loading="eager">
-      </a>
+      <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="main-logo" width="150" height="55" loading="eager" onclick="showScreen('inicio')">
     </div>
     <nav class="nav-links">
-      <a href="index.html" class="active">Inicio</a>
-      <a href="nosotros.html">Nosotros</a>
-      <a href="contacto.html">Contacto</a>
+      <a id="nav-inicio" class="active" onclick="showScreen('inicio')">Inicio</a>
+      <a id="nav-nosotros" onclick="showScreen('nosotros')">Nosotros</a>
+      <a id="nav-contacto" onclick="showScreen('contacto')">Contacto</a>
     </nav>
   </header>
 
-  <!-- Banner Principal Único para Inicio -->
-  <main>
+  <!-- PANTALLA 1: INICIO -->
+  <main id="inicio" class="page-screen active">
     <section class="hero-section">
       <div class="hero-overlay"></div>
       <div class="hero-content">
@@ -160,11 +197,60 @@
     </section>
   </main>
 
+  <!-- PANTALLA 2: SOBRE NOSOTROS -->
+  <main id="nosotros" class="page-screen">
+    <div class="page-container">
+      <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="section-logo" width="150" height="65" loading="lazy">
+      <h1 class="page-title">Sobre Nosotros</h1>
+      <p class="page-description">
+        Bienvenido a la Fundación JATCET. Ofrecemos un espacio de apoyo, contención y rehabilitación integral para la comunidad.
+      </p>
+    </div>
+  </main>
+
+  <!-- PANTALLA 3: CONTACTO -->
+  <main id="contacto" class="page-screen">
+    <div class="page-container">
+      <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="section-logo" width="150" height="65" loading="lazy">
+      <h1 class="page-title">Contacto</h1>
+      <p class="page-description">
+        Estamos aquí para escucharte y acompañarte en todo momento.
+      </p>
+    </div>
+  </main>
+
   <!-- Pie de Página -->
   <footer class="footer">
     <p class="footer-motto">Justo A Tiempo Creo En Ti</p>
     <p class="footer-copy">&copy; 2026 Fundación JATCET. Todos los derechos reservados.</p>
   </footer>
 
+  <script>
+    // Función para alternar la visibilidad entre pantallas sin salir del index.html
+    function showScreen(screenId) {
+      // Ocultar todas las pantallas
+      const screens = document.querySelectorAll('.page-screen');
+      screens.forEach(screen => screen.classList.remove('active'));
+
+      // Desactivar todos los enlaces de navegación
+      const navLinks = document.querySelectorAll('.nav-links a');
+      navLinks.forEach(link => link.classList.remove('active'));
+
+      // Mostrar la pantalla seleccionada
+      const targetScreen = document.getElementById(screenId);
+      if (targetScreen) {
+        targetScreen.classList.add('active');
+      }
+
+      // Activar el enlace del menú correspondiente
+      const activeNav = document.getElementById('nav-' + screenId);
+      if (activeNav) {
+        activeNav.classList.add('active');
+      }
+
+      // Desplazar al inicio de la página
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
