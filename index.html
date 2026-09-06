@@ -77,7 +77,7 @@
       display: block;
     }
 
-    /* Pantalla 1: Banner Principal HERO (Inicio) */
+    /* Banner Principal HERO (Compartido en todas las pantallas) */
     .hero-section {
       position: relative;
       min-height: calc(100vh - 120px);
@@ -462,7 +462,7 @@
       line-height: 1.6;
     }
 
-    /* SECCIÓN: BANNER CTA CON ESTRUCTURA CORREGIDA PARA IMAGEN DE FONDO */
+    /* SECCIÓN: BANNER CTA */
     .cta-banner-section {
       padding: 2rem 5% 4rem 5%;
       background-color: #ffffff;
@@ -1068,7 +1068,7 @@
       </div>
     </section>
 
-    <!-- BANNER CTA BAJO PREGUNTAS FRECUENTES (Etiqueta HTML <img> para asegurar la carga) -->
+    <!-- BANNER CTA BAJO PREGUNTAS FRECUENTES -->
     <section class="cta-banner-section">
       <div class="cta-banner-container">
         <img src="https://i.postimg.cc/J79KXFHP/Chat-GPT-Image-6-sept-2026-04-58-17-p-m.png" alt="Fondo JATCET" class="cta-banner-bg-img">
@@ -1086,124 +1086,184 @@
   </main>
 
   <!-- PANTALLA 2: SOBRE NOSOTROS -->
-  <main id="nosotros" class="page-screen" style="padding: 4rem 4%;">
-    <div class="nosotros-layout">
-      
-      <!-- Costado Izquierdo: Solo Título en Recuadro -->
-      <div class="title-box">
-        <h1 class="page-title">Sobre Nosotros</h1>
-      </div>
-
-      <!-- Costado Derecho: Texto Secundario y Recuadros Anchos -->
-      <div class="nosotros-content">
+  <main id="nosotros" class="page-screen">
+    
+    <!-- Banner Principal Inyectado -->
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="hero-container">
         
-        <!-- Texto Secundario en Recuadro -->
-        <div class="intro-card">
-          <p>
-            Conoce los pilares fundamentales que guían nuestro trabajo diario en la contención, reestructuración y apoyo social.
+        <!-- Costado Izquierdo: Marca y Subtítulo -->
+        <div class="hero-left">
+          <h1 class="hero-title-main">JATCET</h1>
+          <p class="hero-acronym-meaning">Justo A Tiempo Creo En Ti</p>
+          <p class="hero-subtitle">
+            Acompañamos a personas y familias afectadas por el consumo problemático de alcohol y otras drogas con un enfoque cercano, respetuoso y profesional.
           </p>
         </div>
 
-        <!-- Recuadros Misión y Visión -->
-        <div class="cards-horizontal">
-          <div class="info-card">
-            <h2 class="card-title">Misión</h2>
-            <p class="card-text">
-              Somos una comunidad terapéutica que ofrece un tratamiento biopsicosocial integral, nuestro enfoque es la reestructuración de la personalidad, la recuperación y adquisición de nuevos valores. Trabajamos con la familia y el residente, ofreciendo un servicio de calidad con profesionales altamente capacitados y ex adictos que comprenden el problema personalmente con una gran experiencia en tratamiento.
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h2 class="card-title">Visión</h2>
-            <p class="card-text">
-              Nuestros principales objetivos son la aceptación y la rehabilitación de adictos dentro de la sociedad. Enfocados en reeducarlos de una forma integral, donde se logre desarrollar los valores, el reconocimiento de sí mismo y de sus conductas para que la sociedad acepte el problema y ayude a resolverlo, manteniendo en el tiempo los valores como herramientas sólidas.
-            </p>
-          </div>
+        <!-- Costado Derecho: Texto Complementario -->
+        <div class="hero-right">
+          <h2 class="hero-right-title">Nuestra Misión</h2>
+          <p class="hero-right-subtitle">Recuperar salud, vínculos y esperanza.</p>
+          <p class="hero-right-text">
+            Brindamos un espacio seguro para avanzar con acompañamiento continuo y apoyo profesional.
+          </p>
         </div>
 
       </div>
+    </section>
 
+    <!-- Contenido de Sobre Nosotros -->
+    <div style="padding: 4rem 4%;">
+      <div class="nosotros-layout">
+        
+        <!-- Costado Izquierdo: Solo Título en Recuadro -->
+        <div class="title-box">
+          <h1 class="page-title">Sobre Nosotros</h1>
+        </div>
+
+        <!-- Costado Derecho: Texto Secundario y Recuadros Anchos -->
+        <div class="nosotros-content">
+          
+          <!-- Texto Secundario en Recuadro -->
+          <div class="intro-card">
+            <p>
+              Conoce los pilares fundamentales que guían nuestro trabajo diario en la contención, reestructuración y apoyo social.
+            </p>
+          </div>
+
+          <!-- Recuadros Misión y Visión -->
+          <div class="cards-horizontal">
+            <div class="info-card">
+              <h2 class="card-title">Misión</h2>
+              <p class="card-text">
+                Somos una comunidad terapéutica que ofrece un tratamiento biopsicosocial integral, nuestro enfoque es la reestructuración de la personalidad, la recuperación y adquisición de nuevos valores. Trabajamos con la familia y el residente, ofreciendo un servicio de calidad con profesionales altamente capacitados y ex adictos que comprenden el problema personalmente con una gran experiencia en tratamiento.
+              </p>
+            </div>
+
+            <div class="info-card">
+              <h2 class="card-title">Visión</h2>
+              <p class="card-text">
+                Nuestros principales objetivos son la aceptación y la rehabilitación de adictos dentro de la sociedad. Enfocados en reeducarlos de una forma integral, donde se logre desarrollar los valores, el reconocimiento de sí mismo y de sus conductas para que la sociedad acepte el problema y ayude a resolverlo, manteniendo en el tiempo los valores como herramientas sólidas.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
     </div>
   </main>
 
   <!-- PANTALLA 3: CONTACTO -->
-  <main id="contacto" class="page-screen" style="padding: 4rem 5%;">
-    <div class="contacto-wrapper">
-      
-      <!-- Bloque Superior: Formulario e Información -->
-      <div class="contacto-layout">
+  <main id="contacto" class="page-screen">
+    
+    <!-- Banner Principal Inyectado -->
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="hero-container">
         
-        <!-- 1° División Izquierda: Solicita Información -->
-        <div class="contacto-card">
-          <h2 class="section-column-title">Solicita Información</h2>
-          
-          <form action="https://formsubmit.co/fundacionjatcet@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="Nueva solicitud de información - Fundación JATCET">
-            <input type="hidden" name="_captcha" value="false">
-
-            <div class="form-group">
-              <label for="nombre">Nombre *</label>
-              <input type="text" id="nombre" name="Nombre" class="form-control" placeholder="Tu nombre" required>
-            </div>
-
-            <div class="form-group">
-              <label for="email">Correo Electrónico *</label>
-              <input type="email" id="email" name="Correo" class="form-control" placeholder="tu@email.com" required>
-            </div>
-
-            <div class="form-group">
-              <label for="mensaje">Mensaje *</label>
-              <textarea id="mensaje" name="Mensaje" class="form-control" maxlength="1000" placeholder="Escribe tu mensaje aquí..." required oninput="updateCharCount(this)"></textarea>
-              <div class="char-counter"><span id="char-count">0</span> / 1000 caracteres</div>
-            </div>
-
-            <button type="submit" class="submit-btn">Enviar Mensaje</button>
-          </form>
+        <!-- Costado Izquierdo: Marca y Subtítulo -->
+        <div class="hero-left">
+          <h1 class="hero-title-main">JATCET</h1>
+          <p class="hero-acronym-meaning">Justo A Tiempo Creo En Ti</p>
+          <p class="hero-subtitle">
+            Acompañamos a personas y familias afectadas por el consumo problemático de alcohol y otras drogas con un enfoque cercano, respetuoso y profesional.
+          </p>
         </div>
 
-        <!-- 2° División Derecha: Información de Contacto -->
-        <div class="contacto-card">
-          <h2 class="section-column-title">Información de contacto</h2>
+        <!-- Costado Derecho: Texto Complementario -->
+        <div class="hero-right">
+          <h2 class="hero-right-title">Nuestra Misión</h2>
+          <p class="hero-right-subtitle">Recuperar salud, vínculos y esperanza.</p>
+          <p class="hero-right-text">
+            Brindamos un espacio seguro para avanzar con acompañamiento continuo y apoyo profesional.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contenido de Contacto -->
+    <div style="padding: 4rem 5%;">
+      <div class="contacto-wrapper">
+        
+        <!-- Bloque Superior: Formulario e Información -->
+        <div class="contacto-layout">
           
-          <div class="contact-info-list">
-            <div class="contact-info-item">
-              <h3>Dirección</h3>
-              <p>San Martirian #668, Isla de Maipo</p>
-            </div>
+          <!-- 1° División Izquierda: Solicita Información -->
+          <div class="contacto-card">
+            <h2 class="section-column-title">Solicita Información</h2>
+            
+            <form action="https://formsubmit.co/fundacionjatcet@gmail.com" method="POST">
+              <input type="hidden" name="_subject" value="Nueva solicitud de información - Fundación JATCET">
+              <input type="hidden" name="_captcha" value="false">
 
-            <div class="contact-info-item">
-              <h3>Teléfono</h3>
-              <p></p>
-            </div>
+              <div class="form-group">
+                <label for="nombre">Nombre *</label>
+                <input type="text" id="nombre" name="Nombre" class="form-control" placeholder="Tu nombre" required>
+              </div>
 
-            <div class="contact-info-item">
-              <h3>Email</h3>
-              <p>fundacionjatcet@gmail.com</p>
-            </div>
+              <div class="form-group">
+                <label for="email">Correo Electrónico *</label>
+                <input type="email" id="email" name="Correo" class="form-control" placeholder="tu@email.com" required>
+              </div>
 
-            <div class="contact-info-item">
-              <h3>Horario de Atención</h3>
-              <p><strong>Lunes a Viernes:</strong> 09:00 a 20:00 horas</p>
-              <p><strong>Sábado:</strong> 10:00 a 17:00 horas</p>
+              <div class="form-group">
+                <label for="mensaje">Mensaje *</label>
+                <textarea id="mensaje" name="Mensaje" class="form-control" maxlength="1000" placeholder="Escribe tu mensaje aquí..." required oninput="updateCharCount(this)"></textarea>
+                <div class="char-counter"><span id="char-count">0</span> / 1000 caracteres</div>
+              </div>
+
+              <button type="submit" class="submit-btn">Enviar Mensaje</button>
+            </form>
+          </div>
+
+          <!-- 2° División Derecha: Información de Contacto -->
+          <div class="contacto-card">
+            <h2 class="section-column-title">Información de contacto</h2>
+            
+            <div class="contact-info-list">
+              <div class="contact-info-item">
+                <h3>Dirección</h3>
+                <p>San Martirian #668, Isla de Maipo</p>
+              </div>
+
+              <div class="contact-info-item">
+                <h3>Teléfono</h3>
+                <p></p>
+              </div>
+
+              <div class="contact-info-item">
+                <h3>Email</h3>
+                <p>fundacionjatcet@gmail.com</p>
+              </div>
+
+              <div class="contact-info-item">
+                <h3>Horario de Atención</h3>
+                <p><strong>Lunes a Viernes:</strong> 09:00 a 20:00 horas</p>
+                <p><strong>Sábado:</strong> 10:00 a 17:00 horas</p>
+              </div>
             </div>
+          </div>
+
+        </div>
+
+        <!-- Bloque Inferior: Visítanos y Mapa Interactivo -->
+        <div class="map-section">
+          <h2 class="section-column-title">Visítanos</h2>
+          <div class="map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.458804618764!2d-70.8988!3d-33.7538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x966318e805555555%3A0x0!2sSan%20Martirian%20668%2C%20Isla%20de%20Maipo%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1710000000000!5m2!1ses!2scl" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
         </div>
 
       </div>
-
-      <!-- Bloque Inferior: Visítanos y Mapa Interactivo -->
-      <div class="map-section">
-        <h2 class="section-column-title">Visítanos</h2>
-        <div class="map-container">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.458804618764!2d-70.8988!3d-33.7538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x966318e805555555%3A0x0!2sSan%20Martirian%20668%2C%20Isla%20de%20Maipo%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1710000000000!5m2!1ses!2scl" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-      </div>
-
     </div>
   </main>
 
