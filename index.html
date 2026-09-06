@@ -361,9 +361,9 @@
       line-height: 1.5;
     }
 
-    /* Nueva Sección: Preguntas Frecuentes (Mesa de Ayuda - Centrada) */
+    /* Sección: Preguntas Frecuentes (Mesa de Ayuda) */
     .faq-section {
-      padding: 2rem 5% 5rem 5%;
+      padding: 2rem 5% 3rem 5%;
       background-color: #ffffff;
     }
 
@@ -460,6 +460,92 @@
       color: var(--text-dark);
       font-size: 1.05rem;
       line-height: 1.6;
+    }
+
+    /* SECCIÓN: BANNER CTA BAJO PREGUNTAS FRECUENTES */
+    .cta-banner-section {
+      padding: 2rem 5% 4rem 5%;
+      background-color: #ffffff;
+    }
+
+    .cta-banner-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      background-image: url('https://i.postimg.cc/J79KXFHP/Chat-GPT-Image-6-sept-2026-04-58-17-p-m.png');
+      background-size: cover;
+      background-position: center;
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+    }
+
+    .cta-banner-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.60);
+      z-index: 1;
+    }
+
+    .cta-banner-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 2.5rem 3.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .cta-banner-text {
+      text-align: left;
+      color: #ffffff;
+    }
+
+    .cta-banner-pretitle {
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #38b6ff;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .cta-banner-title {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #ffffff;
+      line-height: 1.25;
+      margin: 0;
+    }
+
+    .cta-banner-btn {
+      background-color: var(--accent-color);
+      color: #ffffff;
+      font-family: var(--font-main);
+      font-size: 1.15rem;
+      font-weight: bold;
+      padding: 0.9rem 2.2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-banner-btn:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     }
 
     /* Estructura para la sección SOBRE NOSOTROS */
@@ -748,6 +834,16 @@
         gap: 2rem;
       }
 
+      .cta-banner-content {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+      }
+
+      .cta-banner-title {
+        font-size: 1.75rem;
+      }
+
       .hero-title-main {
         font-size: 3.5rem;
       }
@@ -963,6 +1059,20 @@
       </div>
     </section>
 
+    <!-- BANNER CTA BAJO PREGUNTAS FRECUENTES -->
+    <section class="cta-banner-section">
+      <div class="cta-banner-container">
+        <div class="cta-banner-overlay"></div>
+        <div class="cta-banner-content">
+          <div class="cta-banner-text">
+            <span class="cta-banner-pretitle">No estás solo</span>
+            <h2 class="cta-banner-title">Si necesitas ayuda, aquí encontrarás apoyo real.</h2>
+          </div>
+          <button class="cta-banner-btn" onclick="showScreen('contacto')">Contactar</button>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- PANTALLA 2: SOBRE NOSOTROS -->
@@ -984,7 +1094,7 @@
           </p>
         </div>
 
-        <!-- Recuadros Dinámicos de Misión y Visión más Anchos en Horizontal -->
+        <!-- Recuadros Misión y Visión -->
         <div class="cards-horizontal">
           <div class="info-card">
             <h2 class="card-title">Misión</h2>
