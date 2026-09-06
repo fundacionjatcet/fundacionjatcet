@@ -174,9 +174,9 @@
       color: #f0f0f0;
     }
 
-    /* Sección Bajo el Banner (Inicio) */
+    /* Sección Sobre JATCET Bajo el Banner (Inicio) */
     .approach-section {
-      padding: 4rem 5%;
+      padding: 4rem 5% 2rem 5%;
       background-color: #ffffff;
     }
 
@@ -228,6 +228,77 @@
       font-size: 1.2rem;
       line-height: 1.7;
       color: #ffffff;
+    }
+
+    /* Sección Valores (Inicio) */
+    .valores-section {
+      padding: 2rem 5% 4rem 5%;
+      background-color: #ffffff;
+    }
+
+    .valores-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .valores-header {
+      text-align: left;
+    }
+
+    .valores-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      width: 100%;
+    }
+
+    .valor-card {
+      background-color: var(--bg-light);
+      padding: 2.2rem 2.5rem;
+      border-radius: 12px;
+      border: 1px solid #e9ecef;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      text-align: left;
+    }
+
+    .valor-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      border-color: var(--accent-color);
+    }
+
+    .valor-card-full {
+      grid-column: 1 / -1;
+    }
+
+    .valor-card-number {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #ffffff;
+      background-color: var(--accent-color);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .valor-card-title {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      margin-bottom: 0.8rem;
+    }
+
+    .valor-card-text {
+      color: var(--text-dark);
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
 
     /* Estructura para la sección SOBRE NOSOTROS */
@@ -507,7 +578,7 @@
     }
 
     @media (max-width: 768px) {
-      .hero-container, .approach-container, .cards-horizontal {
+      .hero-container, .approach-container, .cards-horizontal, .valores-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
       }
@@ -573,7 +644,7 @@
       </div>
     </section>
 
-    <!-- Sección Bajo el Banner -->
+    <!-- Sección Bajo el Banner: Sobre JATCET -->
     <section class="approach-section">
       <div class="approach-container">
         <div class="approach-left-content">
@@ -586,6 +657,39 @@
           <p class="approach-card-text">
             En JATCET creemos que cada persona puede abrir una nueva etapa de bienestar. Por eso diseñamos un acompañamiento cercano, respetuoso y realista, pensado para acompañar la recuperación sin juzgar ni estigmatizar.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nueva Sección: Valores -->
+    <section class="valores-section">
+      <div class="valores-container">
+        <div class="valores-header">
+          <span class="approach-pretitle">Valores</span>
+          <h2 class="approach-title">Principios que guían nuestro trabajo</h2>
+        </div>
+
+        <div class="valores-grid">
+          <!-- Recuadro 1 -->
+          <div class="valor-card">
+            <div class="valor-card-number">1</div>
+            <h3 class="valor-card-title">Respeto</h3>
+            <p class="valor-card-text">Atendemos cada caso con sensibilidad, dignidad y sin prejuicios.</p>
+          </div>
+
+          <!-- Recuadro 2 -->
+          <div class="valor-card">
+            <div class="valor-card-number">2</div>
+            <h3 class="valor-card-title">Escucha</h3>
+            <p class="valor-card-text">Entendemos la realidad de cada persona antes de proponer un plan de apoyo.</p>
+          </div>
+
+          <!-- Recuadro 3 -->
+          <div class="valor-card valor-card-full">
+            <div class="valor-card-number">3</div>
+            <h3 class="valor-card-title">Recuperación</h3>
+            <p class="valor-card-text">Trabajamos para restaurar salud, vínculos y proyectos de vida sostenibles.</p>
+          </div>
         </div>
       </div>
     </section>
