@@ -462,7 +462,7 @@
       line-height: 1.6;
     }
 
-    /* SECCIÓN: BANNER CTA BAJO PREGUNTAS FRECUENTES */
+    /* SECCIÓN: BANNER CTA CON ESTRUCTURA CORREGIDA PARA IMAGEN DE FONDO */
     .cta-banner-section {
       padding: 2rem 5% 4rem 5%;
       background-color: #ffffff;
@@ -475,12 +475,21 @@
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-      background-image: url('https://i.postimg.cc/J79KXFHP/Chat-GPT-Image-6-sept-2026-04-58-17-p-m.png');
-      background-size: cover;
-      background-position: center;
       min-height: 220px;
       display: flex;
       align-items: center;
+      background-color: #1a1a1a;
+    }
+
+    .cta-banner-bg-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 1;
     }
 
     .cta-banner-overlay {
@@ -490,12 +499,12 @@
       width: 100%;
       height: 100%;
       background: rgba(0, 0, 0, 0.60);
-      z-index: 1;
+      z-index: 2;
     }
 
     .cta-banner-content {
       position: relative;
-      z-index: 2;
+      z-index: 3;
       width: 100%;
       padding: 2.5rem 3.5rem;
       display: flex;
@@ -1059,9 +1068,10 @@
       </div>
     </section>
 
-    <!-- BANNER CTA BAJO PREGUNTAS FRECUENTES -->
+    <!-- BANNER CTA BAJO PREGUNTAS FRECUENTES (Etiqueta HTML <img> para asegurar la carga) -->
     <section class="cta-banner-section">
       <div class="cta-banner-container">
+        <img src="https://i.postimg.cc/J79KXFHP/Chat-GPT-Image-6-sept-2026-04-58-17-p-m.png" alt="Fondo JATCET" class="cta-banner-bg-img">
         <div class="cta-banner-overlay"></div>
         <div class="cta-banner-content">
           <div class="cta-banner-text">
