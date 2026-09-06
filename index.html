@@ -47,11 +47,24 @@
       z-index: 100;
     }
 
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+    }
+
     .main-logo {
       height: 55px;
       width: auto;
       object-fit: contain;
-      cursor: pointer;
+    }
+
+    .logo-text {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      letter-spacing: 1px;
     }
 
     .nav-links a {
@@ -96,7 +109,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.55);
+      background: rgba(0, 0, 0, 0.72); /* Transparencia ajustada para mejor contraste */
       z-index: 1;
     }
 
@@ -144,11 +157,11 @@
     /* Columna Derecha del Banner Principal */
     .hero-right {
       text-align: left;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(0, 0, 0, 0.45);
       backdrop-filter: blur(8px);
       padding: 2.5rem;
       border-radius: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.25);
     }
 
     .hero-right-title {
@@ -193,7 +206,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.55); /* Transparencia */
+      background: rgba(0, 0, 0, 0.72); /* Transparencia ajustada para mejor contraste */
       z-index: 1;
     }
 
@@ -556,7 +569,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.60);
+      background: rgba(0, 0, 0, 0.72); /* Transparencia ajustada para mejor contraste */
       z-index: 2;
     }
 
@@ -937,10 +950,11 @@
 </head>
 <body>
 
-  <!-- Encabezado con Logo Principal -->
+  <!-- Encabezado con Logo Principal y Texto JATCET -->
   <header class="header">
-    <div class="logo-container">
-      <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="main-logo" width="150" height="55" loading="eager" onclick="showScreen('inicio')">
+    <div class="logo-container" onclick="showScreen('inicio')">
+      <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="main-logo" width="150" height="55" loading="eager">
+      <span class="logo-text">JATCET</span>
     </div>
     <nav class="nav-links">
       <a id="nav-inicio" class="active" onclick="showScreen('inicio')">Inicio</a>
@@ -1141,7 +1155,7 @@
   <!-- PANTALLA 2: SOBRE NOSOTROS -->
   <main id="nosotros" class="page-screen">
     
-    <!-- Banner de Cabecera con Transparencia y Texto Personalizado -->
+    <!-- Banner de Cabecera con Transparencia Mejorada -->
     <div class="page-header-banner">
       <div class="banner-overlay"></div>
       <div class="banner-content">
@@ -1192,7 +1206,7 @@
   <!-- PANTALLA 3: CONTACTO -->
   <main id="contacto" class="page-screen">
     
-    <!-- Banner de Cabecera con Transparencia y Texto Personalizado -->
+    <!-- Banner de Cabecera con Transparencia Mejorada -->
     <div class="page-header-banner">
       <div class="banner-overlay"></div>
       <div class="banner-content">
