@@ -217,50 +217,74 @@
       color: #ffffff;
     }
 
-    /* Pantallas Secundarias */
-    .page-container {
-      padding: 3rem 10%;
-      min-height: calc(100vh - 200px);
+    /* Estructura Asimétrica para la sección SOBRE NOSOTROS */
+    .nosotros-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.35fr 0.65fr;
+      gap: 3rem;
+      align-items: start;
+      text-align: left;
+    }
+
+    /* Recuadro Izquierdo: Título Con Esquinas Redondeadas */
+    .title-box {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
       text-align: center;
     }
 
-    .section-logo {
-      height: 65px;
-      width: auto;
-      margin-bottom: 1.5rem;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .page-title {
+    .title-box .page-title {
       font-size: 2.5rem;
       margin-bottom: 1rem;
+      color: #ffffff;
     }
 
-    .page-description {
-      color: var(--text-muted);
-      max-width: 700px;
-      margin: 0 auto 2.5rem auto;
+    .title-box .section-logo {
+      height: 60px;
+      width: auto;
+      margin: 0 auto 1.5rem auto;
+      display: block;
+    }
+
+    /* Columna Derecha: Desarrollo de Contenidos */
+    .nosotros-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .intro-card {
+      background-color: var(--bg-light);
+      padding: 1.8rem 2rem;
+      border-radius: 12px;
+      border-left: 4px solid var(--accent-color);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    }
+
+    .intro-card p {
       font-size: 1.2rem;
+      color: var(--text-dark);
+      margin: 0;
     }
 
     /* Recuadros Interactivos para Nosotros (Misión y Visión) */
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    .cards-stack {
+      display: flex;
+      flex-direction: column;
       gap: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
     }
 
     .info-card {
       background-color: var(--bg-light);
       padding: 2.5rem;
-      border-radius: 8px;
+      border-radius: 12px;
       border: 1px solid #e9ecef;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      text-align: left;
       transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     }
 
@@ -300,6 +324,12 @@
     }
 
     /* Formulario Dinámico de Contacto */
+    .page-container {
+      padding: 3rem 10%;
+      min-height: calc(100vh - 200px);
+      text-align: center;
+    }
+
     .contact-form-container {
       max-width: 650px;
       margin: 0 auto;
@@ -386,7 +416,7 @@
 
     /* Responsividad */
     @media (max-width: 900px) {
-      .hero-container, .approach-container {
+      .hero-container, .approach-container, .nosotros-layout {
         grid-template-columns: 1fr;
         gap: 2rem;
       }
@@ -465,30 +495,44 @@
   </main>
 
   <!-- PANTALLA 2: SOBRE NOSOTROS -->
-  <main id="nosotros" class="page-screen">
-    <div class="page-container">
-      <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="section-logo" width="150" height="65" loading="lazy">
-      <h1 class="page-title">Sobre Nosotros</h1>
-      <p class="page-description">
-        Conoce los pilares fundamentales que guían nuestro trabajo diario en la contención, reestructuración y apoyo social.
-      </p>
-
-      <!-- Recuadros Interactivos de Misión y Visión -->
-      <div class="cards-grid">
-        <div class="info-card">
-          <h2 class="card-title">Misión</h2>
-          <p class="card-text">
-            Somos una comunidad terapéutica que ofrece un tratamiento biopsicosocial integral, nuestro enfoque es la reestructuración de la personalidad, la recuperación y adquisición de nuevos valores. Trabajamos con la familia y el residente, ofreciendo un servicio de calidad con profesionales altamente capacitados y ex adictos que comprenden el problema personalmente con una gran experiencia en tratamiento.
-          </p>
-        </div>
-
-        <div class="info-card">
-          <h2 class="card-title">Visión</h2>
-          <p class="card-text">
-            Nuestros principales objetivos son la aceptación y la rehabilitación de adictos dentro de la sociedad. Enfocados en reeducarlos de una forma integral, donde se logre desarrollar los valores, el reconocimiento de sí mismo y de sus conductas para que la sociedad acepte el problema y ayude a resolverlo, manteniendo en el tiempo los valores como herramientas sólidas.
-          </p>
-        </div>
+  <main id="nosotros" class="page-screen" style="padding: 4rem 5%;">
+    <div class="nosotros-layout">
+      
+      <!-- Costado Izquierdo: Título en Recuadro con Esquinas Redondeadas -->
+      <div class="title-box">
+        <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="section-logo" width="150" height="60" loading="lazy">
+        <h1 class="page-title">Sobre Nosotros</h1>
       </div>
+
+      <!-- Costado Derecho: Texto Secundario y Recuadros Dinámicos -->
+      <div class="nosotros-content">
+        
+        <!-- Texto Secundario en Recuadro -->
+        <div class="intro-card">
+          <p>
+            Conoce los pilares fundamentales que guían nuestro trabajo diario en la contención, reestructuración y apoyo social.
+          </p>
+        </div>
+
+        <!-- Recuadros Dinámicos de Misión y Visión -->
+        <div class="cards-stack">
+          <div class="info-card">
+            <h2 class="card-title">Misión</h2>
+            <p class="card-text">
+              Somos una comunidad terapéutica que ofrece un tratamiento biopsicosocial integral, nuestro enfoque es la reestructuración de la personalidad, la recuperación y adquisición de nuevos valores. Trabajamos con la familia y el residente, ofreciendo un servicio de calidad con profesionales altamente capacitados y ex adictos que comprenden el problema personalmente con una gran experiencia en tratamiento.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h2 class="card-title">Visión</h2>
+            <p class="card-text">
+              Nuestros principales objetivos son la aceptación y la rehabilitación de adictos dentro de la sociedad. Enfocados en reeducarlos de una forma integral, donde se logre desarrollar los valores, el reconocimiento de sí mismo y de sus conductas para que la sociedad acepte el problema y ayude a resolverlo, manteniendo en el tiempo los valores como herramientas sólidas.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </main>
 
