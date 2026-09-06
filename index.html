@@ -232,7 +232,7 @@
 
     /* Sección Valores (Inicio) */
     .valores-section {
-      padding: 2rem 5% 4rem 5%;
+      padding: 2rem 5% 2rem 5%;
       background-color: #ffffff;
     }
 
@@ -296,6 +296,70 @@
     }
 
     .valor-card-text {
+      color: var(--text-dark);
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    /* Sección Proceso (Inicio) */
+    .proceso-section {
+      padding: 2rem 5% 4rem 5%;
+      background-color: #ffffff;
+    }
+
+    .proceso-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .proceso-header {
+      text-align: left;
+    }
+
+    .proceso-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      width: 100%;
+    }
+
+    .proceso-card {
+      background-color: var(--bg-light);
+      padding: 2.2rem 2.5rem;
+      border-radius: 12px;
+      border: 1px solid #e9ecef;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      text-align: left;
+    }
+
+    .proceso-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      border-color: var(--accent-color);
+    }
+
+    .proceso-card-badge {
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #ffffff;
+      background-color: var(--accent-color);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+
+    .proceso-card-title {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      margin-bottom: 0.8rem;
+    }
+
+    .proceso-card-text {
       color: var(--text-dark);
       font-size: 1.1rem;
       line-height: 1.6;
@@ -578,7 +642,7 @@
     }
 
     @media (max-width: 768px) {
-      .hero-container, .approach-container, .cards-horizontal, .valores-grid {
+      .hero-container, .approach-container, .cards-horizontal, .valores-grid, .proceso-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
       }
@@ -661,7 +725,7 @@
       </div>
     </section>
 
-    <!-- Nueva Sección: Valores -->
+    <!-- Sección: Valores -->
     <section class="valores-section">
       <div class="valores-container">
         <div class="valores-header">
@@ -689,6 +753,46 @@
             <div class="valor-card-number">3</div>
             <h3 class="valor-card-title">Recuperación</h3>
             <p class="valor-card-text">Trabajamos para restaurar salud, vínculos y proyectos de vida sostenibles.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nueva Sección: Proceso -->
+    <section class="proceso-section">
+      <div class="proceso-container">
+        <div class="proceso-header">
+          <span class="approach-pretitle">Proceso</span>
+          <h2 class="approach-title">Cómo trabajamos</h2>
+        </div>
+
+        <div class="proceso-grid">
+          <!-- Paso 1 -->
+          <div class="proceso-card">
+            <span class="proceso-card-badge">1° Paso</span>
+            <h3 class="proceso-card-title">Contacto</h3>
+            <p class="proceso-card-text">Escuchamos la situación y aclaramos dudas con respeto y discreción.</p>
+          </div>
+
+          <!-- Paso 2 -->
+          <div class="proceso-card">
+            <span class="proceso-card-badge">2° Paso</span>
+            <h3 class="proceso-card-title">Valoración</h3>
+            <p class="proceso-card-text">Analizamos necesidades, contexto y metas para crear un camino realista.</p>
+          </div>
+
+          <!-- Paso 3 -->
+          <div class="proceso-card">
+            <span class="proceso-card-badge">3° Paso</span>
+            <h3 class="proceso-card-title">Intervención</h3>
+            <p class="proceso-card-text">Diseñamos apoyo continuo, adaptado a cada persona y su entorno.</p>
+          </div>
+
+          <!-- Paso 4 -->
+          <div class="proceso-card">
+            <span class="proceso-card-badge">4° Paso</span>
+            <h3 class="proceso-card-title">Seguimiento</h3>
+            <p class="proceso-card-text">Acompañamos la evolución para consolidar avances y prevenir recaídas.</p>
           </div>
         </div>
       </div>
