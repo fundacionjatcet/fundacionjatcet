@@ -80,16 +80,14 @@
     /* Pantalla 1: Banner Principal HERO (Inicio) */
     .hero-section {
       position: relative;
-      height: calc(100vh - 170px);
-      min-height: 450px;
+      min-height: calc(100vh - 120px);
       display: flex;
       align-items: center;
-      justify-content: center;
       background-image: url('https://i.postimg.cc/zX2GKtm6/Chat-GPT-Image-4-sept-2026-05-51-13-p-m.png');
       background-size: cover;
       background-position: center;
-      text-align: center;
       color: #ffffff;
+      padding: 3rem 5%;
     }
 
     .hero-overlay {
@@ -98,29 +96,82 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.45);
+      background: rgba(0, 0, 0, 0.55);
       z-index: 1;
     }
 
-    .hero-content {
+    .hero-container {
       position: relative;
       z-index: 2;
-      max-width: 800px;
-      padding: 0 1rem;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
     }
 
-    .hero-title {
-      font-size: 3.8rem;
+    /* Columna Izquierda del Banner */
+    .hero-left {
+      text-align: left;
+    }
+
+    .hero-title-main {
+      font-size: 5rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
-      letter-spacing: 1px;
+      line-height: 1;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .hero-acronym-meaning {
+      font-size: 1.6rem;
+      font-style: italic;
+      font-weight: 400;
+      margin-top: 0.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
     }
 
     .hero-subtitle {
-      font-size: 1.75rem;
-      font-weight: 400;
-      font-style: italic;
-      opacity: 0.95;
+      font-size: 1.25rem;
+      line-height: 1.6;
+      max-width: 650px;
+      opacity: 0.9;
+    }
+
+    /* Columna Derecha del Banner */
+    .hero-right {
+      text-align: left;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      padding: 2.5rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .hero-right-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 0.8rem;
+      color: #ffffff;
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .hero-right-subtitle {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #e0e0e0;
+    }
+
+    .hero-right-text {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #f0f0f0;
     }
 
     /* Pantallas Secundarias */
@@ -168,7 +219,6 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
       text-align: left;
       transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-      cursor: default;
     }
 
     .info-card:hover {
@@ -290,6 +340,22 @@
       font-size: 0.95rem;
       color: var(--text-muted);
     }
+
+    /* Responsividad */
+    @media (max-width: 900px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .hero-title-main {
+        font-size: 3.5rem;
+      }
+
+      .hero-acronym-meaning {
+        font-size: 1.3rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -310,9 +376,26 @@
   <main id="inicio" class="page-screen active">
     <section class="hero-section">
       <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <h1 class="hero-title">Fundación JATCET</h1>
-        <p class="hero-subtitle">Centro de Acompañamiento y Rehabilitación</p>
+      <div class="hero-container">
+        
+        <!-- Costado Izquierdo: Marca y Subtítulo -->
+        <div class="hero-left">
+          <h1 class="hero-title-main">JATCET</h1>
+          <p class="hero-acronym-meaning">Justo A Tiempo Creo En Ti</p>
+          <p class="hero-subtitle">
+            Acompañamos a personas y familias afectadas por el consumo problemático de alcohol y otras drogas con un enfoque cercano, respetuoso y profesional.
+          </p>
+        </div>
+
+        <!-- Costado Derecho: Texto Complementario -->
+        <div class="hero-right">
+          <h2 class="hero-right-title">Nuestra Misión</h2>
+          <p class="hero-right-subtitle">Recuperar salud, vínculos y esperanza.</p>
+          <p class="hero-right-text">
+            Brindamos un espacio seguro para avanzar con acompañamiento continuo y apoyo profesional.
+          </p>
+        </div>
+
       </div>
     </section>
   </main>
