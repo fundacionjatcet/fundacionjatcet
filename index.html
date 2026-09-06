@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://i.postimg.cc" crossorigin>
   <link rel="dns-prefetch" href="https://i.postimg.cc">
 
-  <!-- Carga de tipografía moderna sans-serif (Inter) similar a la imagen -->
+  <!-- Carga de tipografía moderna sans-serif (Inter) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,6 +19,7 @@
       --primary-color: #1a1a1a;
       --accent-color: #0088cc;
       --accent-hover: #006699;
+      --olive-light: #708238; /* Verde oliva claro para la marca */
       --bg-light: #f8f9fa;
       --text-dark: #2c3e50;
       --text-muted: #6c757d;
@@ -67,11 +68,28 @@
       object-fit: contain;
     }
 
+    /* Modificación: Contenedor para el Título Verde Oliva Claro y el Subtítulo */
+    .logo-text-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+    }
+
     .logo-text {
       font-size: 1.8rem;
       font-weight: 800;
-      color: var(--primary-color);
+      color: var(--olive-light); /* Texto JATCET en verde oliva claro */
       letter-spacing: 0.5px;
+      line-height: 1;
+    }
+
+    .logo-subtext {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-top: 0.25rem;
+      letter-spacing: 0.2px;
     }
 
     .nav-links a {
@@ -680,7 +698,6 @@
 
     .nosotros-content {
       display: flex;
-      flex-direction: flex-direction;
       flex-direction: column;
       gap: 2rem;
     }
@@ -973,11 +990,14 @@
 </head>
 <body>
 
-  <!-- Encabezado con Logo Principal y Texto JATCET -->
+  <!-- Encabezado con Logo Principal, Texto JATCET Verde Oliva y Subtítulo -->
   <header class="header">
     <div class="logo-container" onclick="showScreen('inicio')">
       <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="main-logo" width="150" height="55" loading="eager">
-      <span class="logo-text">JATCET</span>
+      <div class="logo-text-block">
+        <span class="logo-text">JATCET</span>
+        <span class="logo-subtext">Justo A Tiempo Creo En Ti</span>
+      </div>
     </div>
     <nav class="nav-links">
       <a id="nav-inicio" class="active" onclick="showScreen('inicio')">Inicio</a>
