@@ -68,7 +68,6 @@
       object-fit: contain;
     }
 
-    /* Modificación: Contenedor para el Título Verde Oliva Claro y el Subtítulo */
     .logo-text-block {
       display: flex;
       flex-direction: column;
@@ -150,7 +149,6 @@
       align-items: center;
     }
 
-    /* Columna Izquierda del Banner Principal */
     .hero-left {
       text-align: left;
     }
@@ -179,7 +177,6 @@
       font-weight: 400;
     }
 
-    /* Columna Derecha del Banner Principal */
     .hero-right {
       text-align: left;
       background: rgba(0, 0, 0, 0.45);
@@ -213,7 +210,7 @@
       font-weight: 400;
     }
 
-    /* Banners de Cabecera con Transparencia y Texto (Nosotros y Contacto) */
+    /* Banners de Cabecera */
     .page-header-banner {
       width: 100%;
       height: 220px;
@@ -272,7 +269,7 @@
       font-weight: 400;
     }
 
-    /* Sección Sobre JATCET Bajo el Banner (Inicio) */
+    /* Sección Sobre JATCET */
     .approach-section {
       padding: 4rem 5% 2rem 5%;
       background-color: #ffffff;
@@ -564,6 +561,64 @@
       font-size: 1rem;
       line-height: 1.6;
       font-weight: 400;
+    }
+
+    /* SECCIÓN: GALERÍA MULTIMEDIA */
+    .galeria-section {
+      padding: 2rem 5% 3rem 5%;
+      background-color: #ffffff;
+    }
+
+    .galeria-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+    }
+
+    .galeria-item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      background-color: var(--bg-light);
+      border: 1px solid #e9ecef;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      aspect-ratio: 16 / 9;
+    }
+
+    .galeria-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .galeria-item img, 
+    .galeria-item iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: 0;
+    }
+
+    .galeria-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 0.8rem 1rem;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      pointer-events: none;
     }
 
     /* SECCIÓN: BANNER CTA */
@@ -1178,7 +1233,41 @@
       </div>
     </section>
 
-    <!-- BANNER CTA BAJO PREGUNTAS FRECUENTES -->
+    <!-- SECCIÓN: GALERÍA MULTIMEDIA INTERACTIVA -->
+    <section class="galeria-section">
+      <div class="galeria-container">
+        <div style="text-align: left;">
+          <span class="approach-pretitle">Multimedia</span>
+          <h2 class="approach-title">Conoce nuestra comunidad</h2>
+        </div>
+
+        <div class="galeria-grid">
+          <!-- Elemento 1: Video -->
+          <div class="galeria-item">
+            <iframe 
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+              title="Video de la Fundación JATCET" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <!-- Elemento 2: Imagen -->
+          <div class="galeria-item">
+            <img src="https://i.postimg.cc/zX2GKtm6/Chat-GPT-Image-4-sept-2026-05-51-13-p-m.png" alt="Instalaciones Fundación JATCET">
+            <div class="galeria-caption">Nuestras Instalaciones</div>
+          </div>
+
+          <!-- Elemento 3: Imagen -->
+          <div class="galeria-item">
+            <img src="https://i.postimg.cc/J79KXFHP/Chat-GPT-Image-6-sept-2026-04-58-17-p-m.png" alt="Actividades en comunidad">
+            <div class="galeria-caption">Espacios de Acompañamiento</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANNER CTA BAJO GALERÍA -->
     <section class="cta-banner-section">
       <div class="cta-banner-container">
         <img src="https://i.postimg.cc/J79KXFHP/Chat-GPT-Image-6-sept-2026-04-58-17-p-m.png" alt="Fondo JATCET" class="cta-banner-bg-img">
@@ -1198,7 +1287,7 @@
   <!-- PANTALLA 2: SOBRE NOSOTROS -->
   <main id="nosotros" class="page-screen">
     
-    <!-- Banner de Cabecera con Transparencia Mejorada -->
+    <!-- Banner de Cabecera -->
     <div class="page-header-banner">
       <div class="banner-overlay"></div>
       <div class="banner-content">
@@ -1212,7 +1301,7 @@
     <div style="padding: 3rem 4%;">
       <div class="nosotros-layout">
         
-        <!-- Costado Izquierdo: Solo Título en Recuadro -->
+        <!-- Costado Izquierdo: Título -->
         <div class="title-box">
           <h1 class="page-title">Sobre Nosotros</h1>
         </div>
@@ -1249,7 +1338,7 @@
   <!-- PANTALLA 3: CONTACTO -->
   <main id="contacto" class="page-screen">
     
-    <!-- Banner de Cabecera con Transparencia Mejorada -->
+    <!-- Banner de Cabecera -->
     <div class="page-header-banner">
       <div class="banner-overlay"></div>
       <div class="banner-content">
@@ -1265,7 +1354,7 @@
         
         <div class="contacto-layout">
           
-          <!-- 1° División Izquierda: Solicita Información -->
+          <!-- Formulario de Contacto -->
           <div class="contacto-card">
             <h2 class="section-column-title">Solicita Información</h2>
             
@@ -1293,7 +1382,7 @@
             </form>
           </div>
 
-          <!-- 2° División Derecha: Información de Contacto -->
+          <!-- Información de Contacto -->
           <div class="contacto-card">
             <h2 class="section-column-title">Información de contacto</h2>
             
@@ -1323,7 +1412,7 @@
 
         </div>
 
-        <!-- Bloque Inferior: Visítanos y Mapa Interactivo -->
+        <!-- Mapa Interactivo -->
         <div class="map-section">
           <h2 class="section-column-title">Visítanos</h2>
           <div class="map-container">
@@ -1347,7 +1436,7 @@
   </footer>
 
   <script>
-    // Alternar visibilidad entre pantallas
+    // Navegación entre pantallas
     function showScreen(screenId) {
       const screens = document.querySelectorAll('.page-screen');
       screens.forEach(screen => screen.classList.remove('active'));
@@ -1368,7 +1457,7 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Contador de caracteres para el textarea de mensaje
+    // Contador de caracteres en el formulario
     function updateCharCount(textarea) {
       const charCountSpan = document.getElementById('char-count');
       if (charCountSpan) {
@@ -1376,7 +1465,7 @@
       }
     }
 
-    // Función Desplegable para Preguntas Frecuentes (+ / -)
+    // Desplegable Preguntas Frecuentes
     function toggleFaq(card) {
       const isOpen = card.classList.contains('open');
       const btn = card.querySelector('.faq-toggle-btn');
