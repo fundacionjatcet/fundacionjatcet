@@ -18,7 +18,6 @@
       --text-dark: #2c3e50;
       --text-muted: #6c757d;
       --border-color: #cccccc;
-      --success-color: #28a745;
       --font-main: 'Times New Roman', Times, Baskerville, Georgia, serif;
     }
 
@@ -152,6 +151,61 @@
       font-size: 1.2rem;
     }
 
+    /* Recuadros Interactivos para Nosotros (Misión y Visión) */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .info-card {
+      background-color: var(--bg-light);
+      padding: 2.5rem;
+      border-radius: 8px;
+      border: 1px solid #e9ecef;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      cursor: default;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      border-color: var(--accent-color);
+    }
+
+    .card-title {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .card-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background-color: var(--accent-color);
+      transition: width 0.3s ease;
+    }
+
+    .info-card:hover .card-title::after {
+      width: 70px;
+    }
+
+    .card-text {
+      color: var(--text-dark);
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
     /* Formulario Dinámico de Contacto */
     .contact-form-container {
       max-width: 650px;
@@ -269,8 +323,25 @@
       <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="section-logo" width="150" height="65" loading="lazy">
       <h1 class="page-title">Sobre Nosotros</h1>
       <p class="page-description">
-        Bienvenido a la Fundación JATCET. Ofrecemos un espacio de apoyo, contención y rehabilitación integral para la comunidad.
+        Conoce los pilares fundamentales que guían nuestro trabajo diario en la contención, reestructuración y apoyo social.
       </p>
+
+      <!-- Recuadros Interactivos de Misión y Visión -->
+      <div class="cards-grid">
+        <div class="info-card">
+          <h2 class="card-title">Misión</h2>
+          <p class="card-text">
+            Somos una comunidad terapéutica que ofrece un tratamiento biopsicosocial integral, nuestro enfoque es la reestructuración de la personalidad, la recuperación y adquisición de nuevos valores. Trabajamos con la familia y el residente, ofreciendo un servicio de calidad con profesionales altamente capacitados y ex adictos que comprenden el problema personalmente con una gran experiencia en tratamiento.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h2 class="card-title">Visión</h2>
+          <p class="card-text">
+            Nuestros principales objetivos son la aceptación y la rehabilitación de adictos dentro de la sociedad. Enfocados en reeducarlos de una forma integral, donde se logre desarrollar los valores, el reconocimiento de sí mismo y de sus conductas para que la sociedad acepte el problema y ayude a resolverlo, manteniendo en el tiempo los valores como herramientas sólidas.
+          </p>
+        </div>
+      </div>
     </div>
   </main>
 
