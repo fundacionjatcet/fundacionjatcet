@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://i.postimg.cc" crossorigin>
   <link rel="dns-prefetch" href="https://i.postimg.cc">
 
-  <!-- Carga de tipografía moderna sans-serif (Inter) -->
+  <!-- Tipografía Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
       --primary-color: #1a1a1a;
       --accent-color: #0088cc;
       --accent-hover: #006699;
-      --olive-light: #708238; /* Verde oliva claro para la marca */
+      --olive-light: #708238;
       --bg-light: #f8f9fa;
       --text-dark: #2c3e50;
       --text-muted: #6c757d;
@@ -39,10 +39,9 @@
       background-color: #ffffff;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Encabezado NAVEGACIÓN */
+    /* ENCABEZADO Y NAVEGACIÓN RESPONSIVA */
     .header {
       display: flex;
       justify-content: space-between;
@@ -53,17 +52,18 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      flex-wrap: wrap;
     }
 
     .logo-container {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.8rem;
       cursor: pointer;
     }
 
     .main-logo {
-      height: 55px;
+      height: 48px;
       width: auto;
       object-fit: contain;
     }
@@ -71,41 +71,45 @@
     .logo-text-block {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       text-align: left;
     }
 
     .logo-text {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: 800;
       color: var(--olive-light);
-      letter-spacing: 0.5px;
       line-height: 1;
     }
 
     .logo-subtext {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 600;
       color: var(--text-dark);
-      margin-top: 0.25rem;
-      letter-spacing: 0.2px;
+      margin-top: 0.2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
     }
 
     .nav-links a {
-      margin-left: 2rem;
       text-decoration: none;
       color: var(--text-dark);
       font-weight: 600;
-      font-size: 1.05rem;
+      font-size: 1rem;
       transition: color 0.3s ease;
       cursor: pointer;
+      padding: 0.3rem 0;
     }
 
     .nav-links a:hover, .nav-links a.active {
       color: var(--accent-color);
+      border-bottom: 2px solid var(--accent-color);
     }
 
-    /* Control de Visibilidad de Pantallas */
+    /* CONTROL DE PANTALLAS INDEPENDIENTES */
     .page-screen {
       display: none;
     }
@@ -114,113 +118,17 @@
       display: block;
     }
 
-    /* Banner Principal HERO (Pantalla de Inicio) */
-    .hero-section {
-      position: relative;
-      min-height: calc(100vh - 120px);
-      display: flex;
-      align-items: center;
-      background-image: url('https://i.postimg.cc/zX2GKtm6/Chat-GPT-Image-4-sept-2026-05-51-13-p-m.png');
-      background-size: cover;
-      background-position: center;
-      color: #ffffff;
-      padding: 3rem 5%;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.72);
-      z-index: 1;
-    }
-
-    .hero-container {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .hero-left {
-      text-align: left;
-    }
-
-    .hero-title-main {
-      font-size: 5rem;
-      font-weight: 800;
-      line-height: 1;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .hero-acronym-meaning {
-      font-size: 1.5rem;
-      font-weight: 500;
-      margin-top: 0.4rem;
-      margin-bottom: 2rem;
-      opacity: 0.95;
-    }
-
-    .hero-subtitle {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      max-width: 650px;
-      opacity: 0.9;
-      font-weight: 400;
-    }
-
-    .hero-right {
-      text-align: left;
-      background: rgba(0, 0, 0, 0.45);
-      backdrop-filter: blur(8px);
-      padding: 2.5rem;
-      border-radius: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-    }
-
-    .hero-right-title {
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 0.8rem;
-      color: #ffffff;
-      border-bottom: 2px solid var(--accent-color);
-      padding-bottom: 0.5rem;
-      display: inline-block;
-    }
-
-    .hero-right-subtitle {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      color: #e0e0e0;
-    }
-
-    .hero-right-text {
-      font-size: 1.05rem;
-      line-height: 1.6;
-      color: #f0f0f0;
-      font-weight: 400;
-    }
-
-    /* Banners de Cabecera */
+    /* BANNERS GENERALES */
     .page-header-banner {
       width: 100%;
-      height: 220px;
+      min-height: 200px;
       background-image: url('https://i.postimg.cc/zX2GKtm6/Chat-GPT-Image-4-sept-2026-05-51-13-p-m.png');
       background-size: cover;
       background-position: center;
       position: relative;
       display: flex;
       align-items: center;
-      padding: 0 5%;
+      padding: 2.5rem 5%;
     }
 
     .banner-overlay {
@@ -244,606 +152,151 @@
     }
 
     .banner-pretitle {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 700;
       text-transform: uppercase;
       color: #38b6ff;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.2px;
       margin-bottom: 0.3rem;
       display: block;
     }
 
     .banner-title {
-      font-size: 2.5rem;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
       font-weight: 800;
-      line-height: 1.1;
+      line-height: 1.2;
       margin-bottom: 0.5rem;
-      color: #ffffff;
     }
 
     .banner-subtitle {
-      font-size: 1.1rem;
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
       max-width: 750px;
       opacity: 0.95;
-      line-height: 1.5;
-      font-weight: 400;
     }
 
-    /* Sección Sobre JATCET */
-    .approach-section {
-      padding: 4rem 5% 2rem 5%;
-      background-color: #ffffff;
-    }
-
-    .approach-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .approach-left-content {
-      text-align: left;
-    }
-
-    .approach-pretitle {
-      font-size: 1.1rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--accent-color);
-      letter-spacing: 1px;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-
-    .approach-title {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--primary-color);
-      line-height: 1.2;
-    }
-
-    .approach-card {
-      background-color: var(--primary-color);
-      color: #ffffff;
-      padding: 2.5rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .approach-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    .approach-card-text {
-      font-size: 1.15rem;
-      line-height: 1.7;
-      color: #ffffff;
-      font-weight: 400;
-    }
-
-    /* Sección Valores */
-    .valores-section {
-      padding: 2rem 5% 2rem 5%;
-      background-color: #ffffff;
-    }
-
-    .valores-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-    }
-
-    .valores-header {
-      text-align: left;
-    }
-
-    .valores-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      width: 100%;
-    }
-
-    .valor-card {
-      background-color: var(--bg-light);
-      padding: 2rem 1.8rem;
-      border-radius: 12px;
-      border: 1px solid #e9ecef;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-      text-align: left;
-    }
-
-    .valor-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-      border-color: var(--accent-color);
-    }
-
-    .valor-card-number {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #ffffff;
-      background-color: var(--accent-color);
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1rem;
-    }
-
-    .valor-card-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary-color);
-      margin-bottom: 0.8rem;
-    }
-
-    .valor-card-text {
-      color: var(--text-dark);
-      font-size: 1rem;
-      line-height: 1.6;
-      font-weight: 400;
-    }
-
-    /* Sección Proceso */
-    .proceso-section {
-      padding: 2rem 5% 2rem 5%;
-      background-color: #ffffff;
-    }
-
-    .proceso-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-    }
-
-    .proceso-header {
-      text-align: left;
-    }
-
-    .proceso-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-      width: 100%;
-    }
-
-    .proceso-card {
-      background-color: var(--bg-light);
-      padding: 2rem 1.5rem;
-      border-radius: 12px;
-      border: 1px solid #e9ecef;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-      text-align: left;
-    }
-
-    .proceso-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-      border-color: var(--accent-color);
-    }
-
-    .proceso-card-badge {
-      display: inline-block;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: #ffffff;
-      background-color: var(--accent-color);
-      padding: 0.25rem 0.75rem;
-      border-radius: 20px;
-      margin-bottom: 1rem;
-    }
-
-    .proceso-card-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--primary-color);
-      margin-bottom: 0.8rem;
-    }
-
-    .proceso-card-text {
-      color: var(--text-dark);
-      font-size: 0.95rem;
-      line-height: 1.5;
-      font-weight: 400;
-    }
-
-    /* Sección: Preguntas Frecuentes */
-    .faq-section {
-      padding: 2rem 5% 3rem 5%;
-      background-color: #ffffff;
-    }
-
-    .faq-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-      text-align: center;
-    }
-
-    .faq-header {
-      text-align: center;
-    }
-
-    .faq-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      width: 100%;
-      text-align: left;
-    }
-
-    .faq-card {
-      background-color: var(--bg-light);
-      padding: 2rem 2.2rem;
-      border-radius: 12px;
-      border: 1px solid #e9ecef;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-      height: fit-content;
-    }
-
-    .faq-card:hover {
-      border-color: var(--accent-color);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-    }
-
-    .faq-question-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      gap: 1rem;
-    }
-
-    .faq-question-title {
-      font-size: 1.25rem;
-      color: var(--primary-color);
-      font-weight: 700;
-      line-height: 1.35;
-      margin: 0;
-    }
-
-    .faq-toggle-btn {
-      width: 32px;
-      height: 32px;
-      min-width: 32px;
-      border-radius: 50%;
-      background-color: var(--accent-color);
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      font-weight: 700;
-      line-height: 1;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      user-select: none;
-    }
-
-    .faq-card:hover .faq-toggle-btn {
-      background-color: var(--accent-hover);
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s cubic-bezier(0, 1, 0, 1), opacity 0.3s ease, margin-top 0.3s ease;
-      opacity: 0;
-      margin-top: 0;
-    }
-
-    .faq-card.open .faq-answer {
-      max-height: 500px;
-      opacity: 1;
-      margin-top: 1.2rem;
-      padding-top: 1rem;
-      border-top: 1px solid #e0e0e0;
-    }
-
-    .faq-answer-text {
-      color: var(--text-dark);
-      font-size: 1rem;
-      line-height: 1.6;
-      font-weight: 400;
-    }
-
-    /* SECCIÓN: GALERÍA MULTIMEDIA */
-    .galeria-section {
-      padding: 2rem 5% 3rem 5%;
-      background-color: #ffffff;
-    }
-
-    .galeria-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .galeria-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      width: 100%;
-    }
-
-    .galeria-item {
+    /* PANTALLA INICIO (HERO & CONTENIDO) */
+    .hero-section {
       position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      background-color: var(--bg-light);
-      border: 1px solid #e9ecef;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      aspect-ratio: 16 / 9;
-    }
-
-    /* Elemento de Galería Clicable */
-    .galeria-item.clickable {
-      cursor: pointer;
-    }
-
-    .galeria-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    .galeria-item img, 
-    .galeria-item iframe {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border: 0;
-      transition: transform 0.4s ease;
-    }
-
-    .galeria-item.clickable:hover img {
-      transform: scale(1.05);
-    }
-
-    .galeria-caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 0.8rem 1rem;
-      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      min-height: calc(100vh - 80px);
+      display: flex;
+      align-items: center;
+      background-image: url('https://i.postimg.cc/zX2GKtm6/Chat-GPT-Image-4-sept-2026-05-51-13-p-m.png');
+      background-size: cover;
+      background-position: center;
       color: #ffffff;
-      font-size: 0.95rem;
-      font-weight: 600;
-      pointer-events: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 3rem 5%;
     }
 
-    .galeria-caption-badge {
-      background-color: var(--accent-color);
-      font-size: 0.75rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 12px;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    /* SECCIÓN: BANNER CTA */
-    .cta-banner-section {
-      padding: 2rem 5% 4rem 5%;
-      background-color: #ffffff;
-    }
-
-    .cta-banner-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-      min-height: 220px;
-      display: flex;
-      align-items: center;
-      background-color: #1a1a1a;
-    }
-
-    .cta-banner-bg-img {
+    .hero-overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      object-position: center;
+      background: rgba(0, 0, 0, 0.75);
       z-index: 1;
     }
 
-    .cta-banner-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.72);
+    .hero-container {
+      position: relative;
       z-index: 2;
-    }
-
-    .cta-banner-content {
-      position: relative;
-      z-index: 3;
       width: 100%;
-      padding: 2.5rem 3.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .cta-banner-text {
-      text-align: left;
-      color: #ffffff;
-    }
-
-    .cta-banner-pretitle {
-      font-size: 1rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: #38b6ff;
-      letter-spacing: 1.5px;
-      margin-bottom: 0.4rem;
-      display: block;
-    }
-
-    .cta-banner-title {
-      font-size: 2rem;
-      font-weight: 800;
-      color: #ffffff;
-      line-height: 1.25;
-      margin: 0;
-    }
-
-    .cta-banner-btn {
-      background-color: var(--accent-color);
-      color: #ffffff;
-      font-family: var(--font-main);
-      font-size: 1.1rem;
-      font-weight: 700;
-      padding: 0.9rem 2.2rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .cta-banner-btn:hover {
-      background-color: var(--accent-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Estructura para la sección SOBRE NOSOTROS */
-    .nosotros-layout {
-      max-width: 1350px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 0.25fr 0.75fr;
-      gap: 2.5rem;
-      align-items: start;
-      text-align: left;
-    }
-
-    .title-box {
-      background-color: var(--bg-light);
-      color: var(--text-dark);
-      padding: 2.5rem 1.5rem;
-      border-radius: 12px;
-      border: 1px solid #e9ecef;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      text-align: center;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .title-box:hover {
-      border-color: var(--accent-color);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    }
-
-    .title-box .page-title {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--primary-color);
-      margin: 0;
-      line-height: 1.2;
-    }
-
-    .nosotros-content {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .cards-horizontal {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      width: 100%;
-    }
-
-    .info-card {
-      background-color: var(--bg-light);
-      padding: 2.2rem 2.5rem;
-      border-radius: 12px;
-      border: 1px solid #e9ecef;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    }
-
-    .info-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-      border-color: var(--accent-color);
-    }
-
-    .card-title {
-      font-size: 1.7rem;
-      font-weight: 700;
-      color: var(--primary-color);
-      margin-bottom: 1rem;
-      position: relative;
-      padding-bottom: 0.5rem;
-    }
-
-    .card-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 40px;
-      height: 3px;
-      background-color: var(--accent-color);
-      transition: width 0.3s ease;
-      border-radius: 2px;
-    }
-
-    .info-card:hover .card-title::after {
-      width: 70px;
-    }
-
-    .card-text {
-      color: var(--text-dark);
-      font-size: 1rem;
-      line-height: 1.6;
-      font-weight: 400;
-    }
-
-    /* PANTALLA: FOTOS E HISTORIAS DE LA FUNDACIÓN */
-    .historias-grid {
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: 1.2fr 0.8fr;
       gap: 2.5rem;
-      text-align: left;
+      align-items: center;
     }
 
-    .story-card {
+    .hero-title-main {
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 800;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .hero-acronym-meaning {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 500;
+      margin: 0.5rem 0 1.5rem 0;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      opacity: 0.9;
+      max-width: 650px;
+    }
+
+    .hero-right {
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .hero-right-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 0.4rem;
+      display: inline-block;
+    }
+
+    /* SECCIONES COMPLEMENTARIAS */
+    .section-block {
+      padding: 3.5rem 5%;
+      background-color: #ffffff;
+    }
+
+    .section-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card-item {
+      background-color: var(--bg-light);
+      padding: 1.8rem;
+      border-radius: 12px;
+      border: 1px solid #e9ecef;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .card-item:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-color);
+    }
+
+    /* PANTALLA GALERÍA INDEPENDIENTE */
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .galeria-card {
       background-color: var(--bg-light);
       border-radius: 12px;
       overflow: hidden;
@@ -852,159 +305,117 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .story-card:hover {
+    .galeria-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
     }
 
-    .story-img-wrapper {
+    .galeria-media-wrapper {
       width: 100%;
-      height: 220px;
+      aspect-ratio: 16 / 9;
       overflow: hidden;
+      background-color: #000;
     }
 
-    .story-img-wrapper img {
+    .galeria-media-wrapper img, 
+    .galeria-media-wrapper iframe {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border: 0;
     }
 
-    .story-body {
-      padding: 1.8rem;
+    .galeria-body {
+      padding: 1.5rem;
+      text-align: left;
     }
 
-    .story-tag {
-      display: inline-block;
+    .galeria-tag {
       font-size: 0.8rem;
       font-weight: 700;
       color: var(--accent-color);
       text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 0.5rem;
+      letter-spacing: 0.8px;
     }
 
-    .story-title {
-      font-size: 1.4rem;
+    .galeria-card-title {
+      font-size: 1.3rem;
       font-weight: 700;
       color: var(--primary-color);
-      margin-bottom: 0.8rem;
-      line-height: 1.3;
+      margin: 0.4rem 0 0.6rem 0;
     }
 
-    .story-text {
-      font-size: 0.98rem;
+    .galeria-card-text {
+      font-size: 0.95rem;
       color: var(--text-dark);
-      line-height: 1.6;
     }
 
-    .back-btn-container {
-      max-width: 1200px;
-      margin: 0 auto 2rem auto;
-      text-align: left;
+    .clickable-card {
+      cursor: pointer;
     }
 
-    .btn-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background-color: var(--bg-light);
-      color: var(--primary-color);
-      border: 1px solid var(--border-color);
+    .btn-action {
+      display: inline-block;
+      margin-top: 1rem;
+      background-color: var(--accent-color);
+      color: #ffffff;
       padding: 0.6rem 1.2rem;
       border-radius: 6px;
       font-weight: 600;
+      font-size: 0.9rem;
+      border: none;
       cursor: pointer;
-      transition: background-color 0.3s ease, border-color 0.3s ease;
+      transition: background-color 0.3s ease;
     }
 
-    .btn-back:hover {
-      background-color: #e9ecef;
-      border-color: var(--accent-color);
+    .btn-action:hover {
+      background-color: var(--accent-hover);
     }
 
-    /* Estructura para la sección CONTACTO */
-    .contacto-wrapper {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 3rem;
+    /* PANTALLA SOBRE NOSOTROS */
+    .nosotros-layout {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
     }
 
+    /* PANTALLA CONTACTO */
     .contacto-layout {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
-      text-align: left;
-    }
-
-    .contacto-card {
-      background-color: var(--bg-light);
-      padding: 2.5rem;
-      border-radius: 12px;
-      border: 1px solid #e9ecef;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    }
-
-    .section-column-title {
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: var(--primary-color);
-      margin-bottom: 1.5rem;
-      border-bottom: 2px solid var(--accent-color);
-      padding-bottom: 0.5rem;
-      display: inline-block;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
     }
 
     .form-group {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
+      text-align: left;
     }
 
     .form-group label {
       display: block;
       font-weight: 600;
-      margin-bottom: 0.5rem;
-      font-size: 1rem;
-      color: var(--text-dark);
+      margin-bottom: 0.4rem;
     }
 
     .form-control {
       width: 100%;
-      padding: 0.8rem 1rem;
-      font-family: var(--font-main);
-      font-size: 1rem;
+      padding: 0.8rem;
       border: 1px solid var(--border-color);
       border-radius: 6px;
-      background-color: #ffffff;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .form-control:focus {
-      outline: none;
-      border-color: var(--accent-color);
-      box-shadow: 0 0 5px rgba(0, 136, 204, 0.3);
+      font-family: var(--font-main);
+      font-size: 1rem;
     }
 
     textarea.form-control {
+      min-height: 120px;
       resize: vertical;
-      min-height: 140px;
-    }
-
-    .char-counter {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      text-align: right;
-      margin-top: 0.3rem;
     }
 
     .submit-btn {
       width: 100%;
-      padding: 1rem;
+      padding: 0.9rem;
       background-color: var(--primary-color);
       color: #ffffff;
-      font-family: var(--font-main);
-      font-size: 1.05rem;
       font-weight: 700;
       border: none;
       border-radius: 6px;
@@ -1016,134 +427,71 @@
       background-color: var(--accent-color);
     }
 
-    /* Lista de Información de Contacto */
-    .contact-info-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      margin-top: 1rem;
-    }
-
-    .contact-info-item h3 {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--accent-color);
-      margin-bottom: 0.3rem;
-    }
-
-    .contact-info-item p {
-      font-size: 1.05rem;
-      color: var(--text-dark);
-      line-height: 1.5;
-      font-weight: 400;
-    }
-
-    /* Sección Mapa Visítanos */
-    .map-section {
-      background-color: var(--bg-light);
-      padding: 2.5rem;
-      border-radius: 12px;
-      border: 1px solid #e9ecef;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      text-align: left;
-    }
-
-    .map-container {
-      width: 100%;
-      height: 400px;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .map-container iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    /* Pie de Página FOOTER */
+    /* FOOTER */
     .footer {
       background-color: var(--bg-light);
       text-align: center;
-      padding: 2.5rem 1rem;
+      padding: 2rem 1rem;
       border-top: 1px solid #e9ecef;
+      margin-top: 2rem;
     }
 
     .footer-motto {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: var(--primary-color);
-      margin-bottom: 0.5rem;
-      letter-spacing: 0.5px;
     }
 
     .footer-copy {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
-      font-weight: 400;
+      margin-top: 0.4rem;
     }
 
-    /* Responsividad Adaptable */
-    @media (max-width: 992px) {
-      .nosotros-layout, .contacto-layout {
+    /* ADAPTABILIDAD MÓVIL Y TABLET (BREAKPOINTS RESPONSIVOS) */
+    @media (max-width: 900px) {
+      .hero-container {
         grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      .valores-grid, .proceso-grid {
-        overflow-x: auto;
-        padding-bottom: 1rem;
       }
     }
 
-    @media (max-width: 768px) {
-      .hero-container, .approach-container, .cards-horizontal, .faq-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .cta-banner-content {
+    @media (max-width: 650px) {
+      .header {
         flex-direction: column;
-        align-items: flex-start;
-        padding: 2rem;
+        gap: 1rem;
+        padding: 1rem 4%;
       }
 
-      .cta-banner-title {
-        font-size: 1.6rem;
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+        gap: 0.5rem;
+        overflow-x: auto;
+        padding-bottom: 0.3rem;
       }
 
-      .hero-title-main {
-        font-size: 3.5rem;
+      .nav-links a {
+        font-size: 0.9rem;
+        white-space: nowrap;
       }
 
-      .hero-acronym-meaning {
-        font-size: 1.25rem;
+      .section-block {
+        padding: 2.5rem 4%;
       }
 
-      .approach-title {
-        font-size: 2rem;
-      }
-
-      .banner-title {
-        font-size: 2rem;
-      }
-
-      .map-container {
-        height: 300px;
-      }
-
-      .page-header-banner {
-        height: 180px;
+      .hero-section {
+        padding: 2rem 4%;
+        min-height: auto;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Encabezado con Logo Principal, Texto JATCET Verde Oliva y Subtítulo -->
+  <!-- ENCABEZADO CON MENÚ DE NAVEGACIÓN INDEPENDIENTE -->
   <header class="header">
     <div class="logo-container" onclick="showScreen('inicio')">
-      <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="main-logo" width="150" height="55" loading="eager">
+      <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="main-logo" width="150" height="48" loading="eager">
       <div class="logo-text-block">
         <span class="logo-text">JATCET</span>
         <span class="logo-subtext">Justo A Tiempo Creo En Ti</span>
@@ -1152,451 +500,237 @@
     <nav class="nav-links">
       <a id="nav-inicio" class="active" onclick="showScreen('inicio')">Inicio</a>
       <a id="nav-nosotros" onclick="showScreen('nosotros')">Nosotros</a>
+      <a id="nav-galeria" onclick="showScreen('galeria')">Galería</a>
       <a id="nav-contacto" onclick="showScreen('contacto')">Contacto</a>
     </nav>
   </header>
 
   <!-- PANTALLA 1: INICIO -->
   <main id="inicio" class="page-screen active">
-    
-    <!-- Banner Principal Completo -->
     <section class="hero-section">
       <div class="hero-overlay"></div>
       <div class="hero-container">
-        
-        <!-- Costado Izquierdo: Marca y Subtítulo -->
-        <div class="hero-left">
+        <div>
           <h1 class="hero-title-main">JATCET</h1>
           <p class="hero-acronym-meaning">Justo A Tiempo Creo En Ti</p>
           <p class="hero-subtitle">
-            Acompañamos a personas y familias afectadas por el consumo problemático de alcohol y otras drogas con un enfoque cercano, respetuoso y profesional.
+            Acompañamos a personas y familias afectadas por el consumo problemático de sustancias con un enfoque cercano, respetuoso y profesional.
           </p>
         </div>
-
-        <!-- Costado Derecho: Texto Complementario -->
         <div class="hero-right">
           <h2 class="hero-right-title">Nuestra Misión</h2>
-          <p class="hero-right-subtitle">Recuperar salud, vínculos y esperanza.</p>
-          <p class="hero-right-text">
-            Brindamos un espacio seguro para avanzar con acompañamiento continuo y apoyo profesional.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Sección Bajo el Banner: Sobre JATCET -->
-    <section class="approach-section">
-      <div class="approach-container">
-        <div class="approach-left-content">
-          <span class="approach-pretitle">Sobre JATCET</span>
-          <h2 class="approach-title">
-            Un enfoque de rehabilitación centrado en la persona.
-          </h2>
-        </div>
-        <div class="approach-card">
-          <p class="approach-card-text">
-            En JATCET creemos que cada persona puede abrir una nueva etapa de bienestar. Por eso diseñamos un acompañamiento cercano, respetuoso y realista, pensado para acompañar la rehabilitación sin juzgar ni estigmatizar.
-          </p>
+          <p style="font-weight: 600; color: #e0e0e0; margin-bottom: 0.5rem;">Recuperar salud, vínculos y esperanza.</p>
+          <p style="font-size: 0.95rem; opacity: 0.9;">Brindamos un espacio seguro para avanzar con acompañamiento continuo y apoyo profesional.</p>
         </div>
       </div>
     </section>
 
-    <!-- Sección: Valores -->
-    <section class="valores-section">
-      <div class="valores-container">
-        <div class="valores-header">
-          <span class="approach-pretitle">Valores</span>
-          <h2 class="approach-title">Principios que guían nuestro trabajo</h2>
-        </div>
-
-        <div class="valores-grid">
-          <div class="valor-card">
-            <div class="valor-card-number">1</div>
-            <h3 class="valor-card-title">Respeto</h3>
-            <p class="valor-card-text">Atendemos cada caso con sensibilidad, dignidad y sin prejuicios.</p>
+    <!-- PRINCIPIOS Y PASOS -->
+    <section class="section-block">
+      <div class="section-container">
+        <span style="color: var(--accent-color); font-weight: 700; text-transform: uppercase;">Valores</span>
+        <h2 class="section-title">Principios que guían nuestro trabajo</h2>
+        <div class="grid-3">
+          <div class="card-item">
+            <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Respeto</h3>
+            <p>Atendemos cada caso con sensibilidad, dignidad y libre de prejuicios.</p>
           </div>
-
-          <div class="valor-card">
-            <div class="valor-card-number">2</div>
-            <h3 class="valor-card-title">Escucha</h3>
-            <p class="valor-card-text">Entendemos la realidad de cada persona antes de proponer un plan de apoyo.</p>
+          <div class="card-item">
+            <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Escucha</h3>
+            <p>Comprendemos la realidad de cada persona antes de estructurar el plan de apoyo.</p>
           </div>
-
-          <div class="valor-card">
-            <div class="valor-card-number">3</div>
-            <h3 class="valor-card-title">Recuperación</h3>
-            <p class="valor-card-text">Trabajamos para restaurar salud, vínculos y proyectos de vida sostenibles.</p>
+          <div class="card-item">
+            <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Recuperación</h3>
+            <p>Trabajamos para restaurar proyectos de vida sostenibles y de bienestar integral.</p>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Sección: Proceso -->
-    <section class="proceso-section">
-      <div class="proceso-container">
-        <div class="proceso-header">
-          <span class="approach-pretitle">Proceso</span>
-          <h2 class="approach-title">Cómo trabajamos</h2>
-        </div>
-
-        <div class="proceso-grid">
-          <div class="proceso-card">
-            <span class="proceso-card-badge">1° Paso</span>
-            <h3 class="proceso-card-title">Contacto</h3>
-            <p class="proceso-card-text">Escuchamos la situación y aclaramos dudas con respeto y discreción.</p>
-          </div>
-
-          <div class="proceso-card">
-            <span class="proceso-card-badge">2° Paso</span>
-            <h3 class="proceso-card-title">Valoración</h3>
-            <p class="proceso-card-text">Analizamos necesidades, contexto y metas para crear un camino realista.</p>
-          </div>
-
-          <div class="proceso-card">
-            <span class="proceso-card-badge">3° Paso</span>
-            <h3 class="proceso-card-title">Intervención</h3>
-            <p class="proceso-card-text">Diseñamos apoyo continuo, adaptado a cada persona y su entorno.</p>
-          </div>
-
-          <div class="proceso-card">
-            <span class="proceso-card-badge">4° Paso</span>
-            <h3 class="proceso-card-title">Seguimiento</h3>
-            <p class="proceso-card-text">Acompañamos la evolución para consolidar avances y prevenir recaídas.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sección: Preguntas Frecuentes -->
-    <section class="faq-section">
-      <div class="faq-container">
-        <div class="faq-header">
-          <span class="approach-pretitle">Mesa de Ayuda</span>
-          <h2 class="approach-title">Preguntas Frecuentes</h2>
-        </div>
-
-        <div class="faq-grid">
-          <div class="faq-card" onclick="toggleFaq(this)">
-            <div class="faq-question-bar">
-              <h3 class="faq-question-title">1° ¿Qué es realmente el consumo problemático de sustancias?</h3>
-              <span class="faq-toggle-btn">+</span>
-            </div>
-            <div class="faq-answer">
-              <p class="faq-answer-text">
-                Es cuando el consumo de alcohol o drogas afecta la salud, las relaciones, el trabajo, el descanso o la capacidad de tomar decisiones. No siempre significa estar “muy atrapado”, sino que el consumo empieza a interferir con la vida cotidiana y con el bienestar personal.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-card" onclick="toggleFaq(this)">
-            <div class="faq-question-bar">
-              <h3 class="faq-question-title">2° ¿Cómo combatir el consumo de un familiar?</h3>
-              <span class="faq-toggle-btn">+</span>
-            </div>
-            <div class="faq-answer">
-              <p class="faq-answer-text">
-                Lo más importante es mantener una conversación respetuosa, sin culpas ni confrontación. Escuchar, observar cambios y ofrecer apoyo profesional puede marcar la diferencia. No se trata de “controlar” a la persona, sino de acompañarla con firmeza y empatía.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-card" onclick="toggleFaq(this)">
-            <div class="faq-question-bar">
-              <h3 class="faq-question-title">3° ¿Cuándo es necesario buscar ayuda profesional?</h3>
-              <span class="faq-toggle-btn">+</span>
-            </div>
-            <div class="faq-answer">
-              <p class="faq-answer-text">
-                Cuando el consumo se vuelve frecuente, aumenta su intensidad, provoca conflictos en la familia, afecta el trabajo o la salud, o cuando la persona siente que ya no puede controlar por sí misma la situación.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-card" onclick="toggleFaq(this)">
-            <div class="faq-question-bar">
-              <h3 class="faq-question-title">4° ¿Qué tipo de apoyo ofrece JATCET?</h3>
-              <span class="faq-toggle-btn">+</span>
-            </div>
-            <div class="faq-answer">
-              <p class="faq-answer-text">
-                Brindamos acompañamiento humano y profesional con enfoque biopsicosocial, valoración, orientación, apoyo familiar y procesos de rehabilitación diseñados para cada persona y su realidad concreta.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECCIÓN: GALERÍA MULTIMEDIA INTERACTIVA -->
-    <section class="galeria-section">
-      <div class="galeria-container">
-        <div style="text-align: left;">
-          <span class="approach-pretitle">Multimedia</span>
-          <h2 class="approach-title">Conoce nuestra comunidad</h2>
-        </div>
-
-        <div class="galeria-grid">
-          <!-- Elemento 1: Video Oficial de la Fundación JATCET -->
-          <div class="galeria-item">
-            <iframe 
-              src="https://www.youtube.com/embed/yUQEm6-qoZU?start=139" 
-              title="FUNDACIÓN JATCET" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen>
-            </iframe>
-          </div>
-
-          <!-- Elemento 2: Imagen que REDIRIGE a la sección de Fotos e Historias -->
-          <div class="galeria-item clickable" onclick="showScreen('historias')">
-            <img src="https://i.postimg.cc/J79KXFHP/Chat-GPT-Image-6-sept-2026-04-58-17-p-m.png" alt="Espacios de Acompañamiento e Historias">
-            <div class="galeria-caption">
-              <span>Fotos e Historias de Vida</span>
-              <span class="galeria-caption-badge">Ver más</span>
-            </div>
-          </div>
-
-          <!-- Elemento 3: Imagen de Instalaciones -->
-          <div class="galeria-item">
-            <img src="https://i.postimg.cc/zX2GKtm6/Chat-GPT-Image-4-sept-2026-05-51-13-p-m.png" alt="Instalaciones Fundación JATCET">
-            <div class="galeria-caption">Nuestras Instalaciones</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- BANNER CTA BAJO GALERÍA -->
-    <section class="cta-banner-section">
-      <div class="cta-banner-container">
-        <img src="https://i.postimg.cc/J79KXFHP/Chat-GPT-Image-6-sept-2026-04-58-17-p-m.png" alt="Fondo JATCET" class="cta-banner-bg-img">
-        <div class="cta-banner-overlay"></div>
-        <div class="cta-banner-content">
-          <div class="cta-banner-text">
-            <span class="cta-banner-pretitle">No estás solo</span>
-            <h2 class="cta-banner-title">Si necesitas ayuda, aquí encontrarás apoyo real.</h2>
-          </div>
-          <button class="cta-banner-btn" onclick="showScreen('contacto')">Contactar</button>
-        </div>
-      </div>
-    </section>
-
   </main>
 
-  <!-- PANTALLA 2: SOBRE NOSOTROS -->
+  <!-- PANTALLA 2: NOSOTROS -->
   <main id="nosotros" class="page-screen">
-    
-    <!-- Banner de Cabecera -->
     <div class="page-header-banner">
       <div class="banner-overlay"></div>
       <div class="banner-content">
-        <span class="banner-pretitle">JATCET</span>
-        <h1 class="banner-title">Descubre quienes somos.</h1>
-        <p class="banner-subtitle">Conoce los pilares fundamentales que guían nuestro trabajo diario en la contención, reestructuración y apoyo social.</p>
+        <span class="banner-pretitle">Fundación JATCET</span>
+        <h1 class="banner-title">Sobre Nosotros</h1>
+        <p class="banner-subtitle">Conoce los pilares fundamentales que guían nuestro compromiso de contención y reestructuración social.</p>
       </div>
     </div>
 
-    <!-- Contenido de Sobre Nosotros -->
-    <div style="padding: 3rem 4%;">
-      <div class="nosotros-layout">
-        
-        <!-- Costado Izquierdo: Título -->
-        <div class="title-box">
-          <h1 class="page-title">Sobre Nosotros</h1>
-        </div>
-
-        <!-- Costado Derecho: Tarjetas de Misión y Visión -->
-        <div class="nosotros-content">
-          <div class="cards-horizontal">
-            <div class="info-card">
-              <h2 class="card-title">Misión</h2>
-              <p class="card-text">
-                Somos una comunidad terapéutica que ofrece un tratamiento biopsicosocial integral, nuestro enfoque es la reestructuración de la personalidad, la recuperación y adquisición de nuevos valores. Trabajamos con la familia y el residente, ofreciendo un servicio de calidad con profesionales altamente capacitados y ex adictos que comprenden el problema personalmente con una gran experiencia en tratamiento.
-              </p>
-            </div>
-
-            <div class="info-card">
-              <h2 class="card-title">Visión</h2>
-              <p class="card-text">
-                Nuestros principales objetivos son la aceptación y la rehabilitación de adictos dentro de la sociedad. Enfocados en reeducarlos de una forma integral, donde se logre desarrollar los valores, el reconocimiento de sí mismo y de sus conductas para que la sociedad acepte el problema y ayude a resolverlo, manteniendo en el tiempo los valores como herramientas sólidas.
-              </p>
-            </div>
+    <section class="section-block">
+      <div class="section-container">
+        <div class="nosotros-layout">
+          <div class="card-item">
+            <h2 style="color: var(--primary-color); margin-bottom: 1rem;">Misión</h2>
+            <p>Somos una comunidad terapéutica que ofrece un tratamiento biopsicosocial integral. Nuestro enfoque es la reestructuración de la personalidad, la recuperación y la adquisición de nuevos valores. Trabajamos directamente con la persona y su entorno familiar con un equipo capacitado.</p>
+          </div>
+          <div class="card-item">
+            <h2 style="color: var(--primary-color); margin-bottom: 1rem;">Visión</h2>
+            <p>Lograr la rehabilitación y reinserción integral de las personas dentro de la sociedad, promoviendo el autorreconocimiento, la dignidad y el fortalecimiento de herramientas emocionales para mantener cambios duraderos.</p>
           </div>
         </div>
-
       </div>
-    </div>
+    </section>
   </main>
 
-  <!-- PANTALLA NUEVA: FOTOS E HISTORIAS DE NUESTRA FUNDACIÓN -->
-  <main id="historias" class="page-screen">
-    
-    <!-- Banner de Cabecera -->
+  <!-- PANTALLA 3: GALERÍA (SECCIÓN INDEPENDIENTE CON NAVEGACIÓN DEDICADA) -->
+  <main id="galeria" class="page-screen">
     <div class="page-header-banner">
       <div class="banner-overlay"></div>
       <div class="banner-content">
         <span class="banner-pretitle">Comunidad JATCET</span>
-        <h1 class="banner-title">Fotos e Historias de Vida</h1>
-        <p class="banner-subtitle">Espacios, vivencias y testimonios de quienes han caminado con nosotros hacia un nuevo comienzo.</p>
+        <h1 class="banner-title">Galería e Historias</h1>
+        <p class="banner-subtitle">Explora nuestras instalaciones, actividades de acompañamiento y testimonios en video e imágenes.</p>
       </div>
     </div>
 
-    <div style="padding: 3rem 5%;">
-      <!-- Botón de Retorno -->
-      <div class="back-btn-container">
-        <button class="btn-back" onclick="showScreen('inicio')">&#8592; Volver al Inicio</button>
-      </div>
-
-      <!-- Galería de Historias y Fotografías -->
-      <div class="historias-grid">
-        
-        <!-- Tarjeta 1 -->
-        <div class="story-card">
-          <div class="story-img-wrapper">
-            <img src="https://i.postimg.cc/J79KXFHP/Chat-GPT-Image-6-sept-2026-04-58-17-p-m.png" alt="Encuentro Comunitario">
-          </div>
-          <div class="story-body">
-            <span class="story-tag">Comunidad y Red de Apoyo</span>
-            <h3 class="story-title">El valor de no caminar solo</h3>
-            <p class="story-text">
-              Nuestras jornadas grupales fomentan la empatía y la reestructuración social, creando un entorno seguro para compartir experiencias reales.
-            </p>
-          </div>
-        </div>
-
-        <!-- Tarjeta 2 -->
-        <div class="story-card">
-          <div class="story-img-wrapper">
-            <img src="https://i.postimg.cc/zX2GKtm6/Chat-GPT-Image-4-sept-2026-05-51-13-p-m.png" alt="Espacios Terapéuticos">
-          </div>
-          <div class="story-body">
-            <span class="story-tag">Infraestructura y Refugio</span>
-            <h3 class="story-title">Un espacio de tranquilidad</h3>
-            <p class="story-text">
-              Diseñamos nuestras instalaciones para ofrecer paz mental, estabilidad y la calma necesaria en cada etapa del proceso biopsicosocial.
-            </p>
-          </div>
-        </div>
-
-        <!-- Tarjeta 3 -->
-        <div class="story-card">
-          <div class="story-img-wrapper">
-            <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Testimonios de Vida" style="object-fit: contain; padding: 1rem; background-color: #1a1a1a;">
-          </div>
-          <div class="story-body">
-            <span class="story-tag">Testimonios de Éxito</span>
-            <h3 class="story-title">Reconstruyendo el futuro</h3>
-            <p class="story-text">
-              Cada paso completado es una victoria para el residente y su familia, consolidando hábitos saludables y valores para una vida libre de adicciones.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </main>
-
-  <!-- PANTALLA 4: CONTACTO -->
-  <main id="contacto" class="page-screen">
-    
-    <!-- Banner de Cabecera -->
-    <div class="page-header-banner">
-      <div class="banner-overlay"></div>
-      <div class="banner-content">
-        <span class="banner-pretitle">Contacto</span>
-        <h1 class="banner-title">Habla con Nosotros</h1>
-        <p class="banner-subtitle">Estamos aquí para escucharte y orientarte en el primer paso hacia una nueva etapa.</p>
-      </div>
-    </div>
-
-    <!-- Contenido de Contacto -->
-    <div style="padding: 3rem 5%;">
-      <div class="contacto-wrapper">
-        
-        <div class="contacto-layout">
+    <section class="section-block">
+      <div class="section-container">
+        <div class="galeria-grid">
           
-          <!-- Formulario de Contacto -->
-          <div class="contacto-card">
-            <h2 class="section-column-title">Solicita Información</h2>
-            
-            <form action="https://formsubmit.co/fundacionjatcet@gmail.com" method="POST">
-              <input type="hidden" name="_subject" value="Nueva solicitud de información - Fundación JATCET">
-              <input type="hidden" name="_captcha" value="false">
-
-              <div class="form-group">
-                <label for="nombre">Nombre *</label>
-                <input type="text" id="nombre" name="Nombre" class="form-control" placeholder="Tu nombre" required>
-              </div>
-
-              <div class="form-group">
-                <label for="email">Correo Electrónico *</label>
-                <input type="email" id="email" name="Correo" class="form-control" placeholder="tu@email.com" required>
-              </div>
-
-              <div class="form-group">
-                <label for="mensaje">Mensaje *</label>
-                <textarea id="mensaje" name="Mensaje" class="form-control" maxlength="1000" placeholder="Escribe tu mensaje aquí..." required oninput="updateCharCount(this)"></textarea>
-                <div class="char-counter"><span id="char-count">0</span> / 1000 caracteres</div>
-              </div>
-
-              <button type="submit" class="submit-btn">Enviar Mensaje</button>
-            </form>
+          <!-- Elemento 1: Video en Galería -->
+          <div class="galeria-card">
+            <div class="galeria-media-wrapper">
+              <iframe 
+                src="https://www.youtube.com/embed/yUQEm6-qoZU?start=139" 
+                title="Video Institucional Fundación JATCET" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="galeria-body">
+              <span class="galeria-tag">Video Institucional</span>
+              <h3 class="galeria-card-title">Nuestro Trabajo en Acción</h3>
+              <p class="galeria-card-text">Conoce nuestra labor de acompañamiento e impacto directo en la comunidad.</p>
+            </div>
           </div>
 
-          <!-- Información de Contacto -->
-          <div class="contacto-card">
-            <h2 class="section-column-title">Información de contacto</h2>
-            
-            <div class="contact-info-list">
-              <div class="contact-info-item">
-                <h3>Dirección</h3>
-                <p>San Martirian #668, Isla de Maipo</p>
-              </div>
+          <!-- Elemento 2: Foto e Historias de la Fundación -->
+          <div class="galeria-card clickable-card" onclick="showScreen('historias-detalle')">
+            <div class="galeria-media-wrapper">
+              <img src="https://i.postimg.cc/J79KXFHP/Chat-GPT-Image-6-sept-2026-04-58-17-p-m.png" alt="Espacios e Historias JATCET">
+            </div>
+            <div class="galeria-body">
+              <span class="galeria-tag">Historias de Vida</span>
+              <h3 class="galeria-card-title">Testimonios y Experiencias</h3>
+              <p class="galeria-card-text">Fotografías y vivencias del proceso de recuperación comunitaria.</p>
+              <button class="btn-action">Ver historias</button>
+            </div>
+          </div>
 
-              <div class="contact-info-item">
-                <h3>Teléfono</h3>
-                <p></p>
-              </div>
-
-              <div class="contact-info-item">
-                <h3>Email</h3>
-                <p>fundacionjatcet@gmail.com</p>
-              </div>
-
-              <div class="contact-info-item">
-                <h3>Horario de Atención</h3>
-                <p><strong>Lunes a Viernes:</strong> 09:00 a 20:00 horas</p>
-                <p><strong>Sábado:</strong> 10:00 a 17:00 horas</p>
-              </div>
+          <!-- Elemento 3: Instalaciones -->
+          <div class="galeria-card">
+            <div class="galeria-media-wrapper">
+              <img src="https://i.postimg.cc/zX2GKtm6/Chat-GPT-Image-4-sept-2026-05-51-13-p-m.png" alt="Instalaciones">
+            </div>
+            <div class="galeria-body">
+              <span class="galeria-tag">Infraestructura</span>
+              <h3 class="galeria-card-title">Espacios Terapéuticos</h3>
+              <p class="galeria-card-text">Instalaciones acondicionadas para brindar paz, seguridad y contención.</p>
             </div>
           </div>
 
         </div>
-
-        <!-- Mapa Interactivo -->
-        <div class="map-section">
-          <h2 class="section-column-title">Visítanos</h2>
-          <div class="map-container">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.458804618764!2d-70.8988!3d-33.7538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x966318e805555555%3A0x0!2sSan%20Martirian%20668%2C%20Isla%20de%20Maipo%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1710000000000!5m2!1ses!2scl" 
-              allowfullscreen="" 
-              loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
-        </div>
-
       </div>
-    </div>
+    </section>
   </main>
 
-  <!-- Pie de Página -->
+  <!-- PANTALLA DETALLE HISTORIAS Y FOTOS -->
+  <main id="historias-detalle" class="page-screen">
+    <div class="page-header-banner">
+      <div class="banner-overlay"></div>
+      <div class="banner-content">
+        <span class="banner-pretitle">Galería / Historias</span>
+        <h1 class="banner-title">Fotos e Historias de la Fundación</h1>
+      </div>
+    </div>
+
+    <section class="section-block">
+      <div class="section-container">
+        <button class="btn-action" style="margin-bottom: 2rem; background-color: var(--primary-color);" onclick="showScreen('galeria')">&#8592; Volver a Galería</button>
+        
+        <div class="galeria-grid">
+          <div class="galeria-card">
+            <div class="galeria-media-wrapper">
+              <img src="https://i.postimg.cc/J79KXFHP/Chat-GPT-Image-6-sept-2026-04-58-17-p-m.png" alt="Red de Apoyo">
+            </div>
+            <div class="galeria-body">
+              <span class="galeria-tag">Comunidad</span>
+              <h3 class="galeria-card-title">El valor de no caminar solo</h3>
+              <p class="galeria-card-text">Nuestras jornadas grupales fomentan la empatía y reestructuración social, ofreciendo un entorno donde cada voz es respetada.</p>
+            </div>
+          </div>
+
+          <div class="galeria-card">
+            <div class="galeria-media-wrapper">
+              <img src="https://i.postimg.cc/zX2GKtm6/Chat-GPT-Image-4-sept-2026-05-51-13-p-m.png" alt="Espacios de Reflexión">
+            </div>
+            <div class="galeria-body">
+              <span class="galeria-tag">Entorno Terapéutico</span>
+              <h3 class="galeria-card-title">Un espacio para el cambio</h3>
+              <p class="galeria-card-text">Un entorno diseñado para brindar tranquilidad mental y estabilidad afectiva durante todo el proceso.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PANTALLA 4: CONTACTO -->
+  <main id="contacto" class="page-screen">
+    <div class="page-header-banner">
+      <div class="banner-overlay"></div>
+      <div class="banner-content">
+        <span class="banner-pretitle">Contacto</span>
+        <h1 class="banner-title">Comunícate con Nosotros</h1>
+        <p class="banner-subtitle">Estamos disponibles para orientarte y ofrecerte la información que necesitas.</p>
+      </div>
+    </div>
+
+    <section class="section-block">
+      <div class="section-container">
+        <div class="contacto-layout">
+          <div class="card-item">
+            <h2 style="color: var(--primary-color); margin-bottom: 1rem;">Envíanos un mensaje</h2>
+            <form action="https://formsubmit.co/fundacionjatcet@gmail.com" method="POST">
+              <input type="hidden" name="_captcha" value="false">
+              <div class="form-group">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="Nombre" class="form-control" required placeholder="Tu nombre">
+              </div>
+              <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="Correo" class="form-control" required placeholder="tu@email.com">
+              </div>
+              <div class="form-group">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="Mensaje" class="form-control" required placeholder="Escribe tu mensaje aquí..."></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Enviar Mensaje</button>
+            </form>
+          </div>
+
+          <div class="card-item">
+            <h2 style="color: var(--primary-color); margin-bottom: 1rem;">Información Directa</h2>
+            <p><strong>Ubicación:</strong> San Martirian #668, Isla de Maipo</p>
+            <p style="margin-top: 0.8rem;"><strong>Email:</strong> fundacionjatcet@gmail.com</p>
+            <p style="margin-top: 0.8rem;"><strong>Atención:</strong> Lunes a Viernes de 09:00 a 20:00 hrs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
   <footer class="footer">
     <p class="footer-motto">Justo A Tiempo Creo En Ti</p>
     <p class="footer-copy">&copy; 2026 Fundación JATCET. Todos los derechos reservados.</p>
   </footer>
 
   <script>
-    // Navegación entre pantallas
+    // Control de navegación suave e independiente entre pantallas
     function showScreen(screenId) {
       const screens = document.querySelectorAll('.page-screen');
       screens.forEach(screen => screen.classList.remove('active'));
@@ -1615,28 +749,6 @@
       }
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // Contador de caracteres en el formulario
-    function updateCharCount(textarea) {
-      const charCountSpan = document.getElementById('char-count');
-      if (charCountSpan) {
-        charCountSpan.textContent = textarea.value.length;
-      }
-    }
-
-    // Desplegable Preguntas Frecuentes
-    function toggleFaq(card) {
-      const isOpen = card.classList.contains('open');
-      const btn = card.querySelector('.faq-toggle-btn');
-      
-      if (isOpen) {
-        card.classList.remove('open');
-        btn.textContent = '+';
-      } else {
-        card.classList.add('open');
-        btn.textContent = '-';
-      }
     }
   </script>
 </body>
