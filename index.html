@@ -937,6 +937,59 @@
       font-size: 0.92rem;
       color: var(--text-dark);
       line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    /* ESTILOS BOTÓN Y GALERÍA DESPLEGABLE EN TARJETAS */
+    .btn-ver-mas {
+      background-color: var(--accent-color);
+      color: #ffffff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn-ver-mas:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .galeria-desplegable {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      margin-top: 0;
+      transition: max-height 0.4s cubic-bezier(0, 1, 0, 1), opacity 0.3s ease, margin-top 0.3s ease;
+    }
+
+    .galeria-desplegable.open {
+      max-height: 500px;
+      opacity: 1;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .grid-imagenes-actividad {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .grid-imagenes-actividad img {
+      width: 100%;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 6px;
+      transition: transform 0.2s ease;
+    }
+
+    .grid-imagenes-actividad img:hover {
+      transform: scale(1.05);
     }
 
     .back-btn-container {
@@ -1508,7 +1561,7 @@
             </div>
           </div>
 
-          <!-- NUEVA TARJETA: Actividades -->
+          <!-- Tarjeta: Actividades -->
           <div class="galeria-item clickable" onclick="showScreen('actividades')">
             <img src="https://i.postimg.cc/J79KXFHP/Chat-GPT-Image-6-sept-2026-04-58-17-p-m.png" alt="Actividades de la Fundación">
             <div class="galeria-caption">
@@ -1671,6 +1724,16 @@
             <p class="story-text">
               Fomentamos la salud corporal, el trabajo en equipo y la canalización saludable de energía a través de dinámicas deportivas y recreativas.
             </p>
+            
+            <button class="btn-ver-mas" onclick="toggleActividadGaleria(this)">Ver más</button>
+
+            <div class="galeria-desplegable">
+              <div class="grid-imagenes-actividad">
+                <img src="https://i.postimg.cc/J79KXFHP/Chat-GPT-Image-6-sept-2026-04-58-17-p-m.png" alt="Deporte 1">
+                <img src="https://i.postimg.cc/zX2GKtm6/Chat-GPT-Image-4-sept-2026-05-51-13-p-m.png" alt="Deporte 2">
+                <img src="https://i.postimg.cc/J79KXFHP/Chat-GPT-Image-6-sept-2026-04-58-17-p-m.png" alt="Deporte 3">
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1685,6 +1748,16 @@
             <p class="story-text">
               Talleres formativos, capacitaciones y espacios de reeducación orientados al crecimiento personal y la reinserción socio-laboral.
             </p>
+            
+            <button class="btn-ver-mas" onclick="toggleActividadGaleria(this)">Ver más</button>
+
+            <div class="galeria-desplegable">
+              <div class="grid-imagenes-actividad">
+                <img src="https://i.postimg.cc/zX2GKtm6/Chat-GPT-Image-4-sept-2026-05-51-13-p-m.png" alt="Educación 1">
+                <img src="https://i.postimg.cc/J79KXFHP/Chat-GPT-Image-6-sept-2026-04-58-17-p-m.png" alt="Educación 2">
+                <img src="https://i.postimg.cc/zX2GKtm6/Chat-GPT-Image-4-sept-2026-05-51-13-p-m.png" alt="Educación 3">
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1699,6 +1772,16 @@
             <p class="story-text">
               Espacios de introspección, fortalecimiento de valores, reflexión y paz mental para consolidar el sentido de propósito de vida.
             </p>
+            
+            <button class="btn-ver-mas" onclick="toggleActividadGaleria(this)">Ver más</button>
+
+            <div class="galeria-desplegable">
+              <div class="grid-imagenes-actividad">
+                <img src="https://i.postimg.cc/J79KXFHP/Chat-GPT-Image-6-sept-2026-04-58-17-p-m.png" alt="Espiritual 1">
+                <img src="https://i.postimg.cc/zX2GKtm6/Chat-GPT-Image-4-sept-2026-05-51-13-p-m.png" alt="Espiritual 2">
+                <img src="https://i.postimg.cc/J79KXFHP/Chat-GPT-Image-6-sept-2026-04-58-17-p-m.png" alt="Espiritual 3">
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1857,6 +1940,20 @@
       } else {
         card.classList.add('open');
         btn.textContent = '-';
+      }
+    }
+
+    // Alternar visibilidad de la galería de imágenes en Actividades
+    function toggleActividadGaleria(btn) {
+      const galeria = btn.nextElementSibling;
+      const isOpen = galeria.classList.contains('open');
+
+      if (isOpen) {
+        galeria.classList.remove('open');
+        btn.textContent = 'Ver más';
+      } else {
+        galeria.classList.add('open');
+        btn.textContent = 'Ver menos';
       }
     }
   </script>
