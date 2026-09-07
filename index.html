@@ -870,8 +870,8 @@
       font-weight: 400;
     }
 
-    /* PANTALLA: FOTOS E HISTORIAS DE LA FUNDACIÓN */
-    .historias-grid {
+    /* PANTALLAS SUB-SECCIONES DE GALERÍA (Múltiples vistas) */
+    .galeria-sub-grid {
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
@@ -896,7 +896,7 @@
 
     .story-img-wrapper {
       width: 100%;
-      height: 200px;
+      height: 220px;
       overflow: hidden;
     }
 
@@ -904,6 +904,11 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .story-card:hover .story-img-wrapper img {
+      transform: scale(1.05);
     }
 
     .story-body {
@@ -1494,10 +1499,13 @@
             </div>
           </div>
 
-          <!-- Imagen de las Instalaciones -->
-          <div class="galeria-item">
+          <!-- Imagen Redireccionable a Instalaciones -->
+          <div class="galeria-item clickable" onclick="showScreen('instalaciones')">
             <img src="https://i.postimg.cc/zX2GKtm6/Chat-GPT-Image-4-sept-2026-05-51-13-p-m.png" alt="Instalaciones Fundación JATCET">
-            <div class="galeria-caption">Nuestras Instalaciones</div>
+            <div class="galeria-caption">
+              <span>Nuestras Instalaciones</span>
+              <span class="galeria-caption-badge">Ver más</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1522,7 +1530,7 @@
         <button class="btn-back" onclick="showScreen('galeria')">&#8592; Volver a Galería</button>
       </div>
 
-      <div class="historias-grid">
+      <div class="galeria-sub-grid">
         <div class="story-card">
           <div class="story-img-wrapper">
             <img src="https://i.postimg.cc/J79KXFHP/Chat-GPT-Image-6-sept-2026-04-58-17-p-m.png" alt="Encuentro Comunitario">
@@ -1558,6 +1566,66 @@
             <h3 class="story-title">Reconstruyendo el futuro</h3>
             <p class="story-text">
               Cada paso completado es una victoria para el residente y su familia, consolidando hábitos saludables y valores para una vida libre de adicciones.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- PANTALLA SUB-SECCIÓN: NUESTRAS INSTALACIONES -->
+  <main id="instalaciones" class="page-screen">
+    
+    <div class="page-header-banner">
+      <div class="banner-overlay"></div>
+      <div class="banner-content">
+        <span class="banner-pretitle">Infraestructura</span>
+        <h1 class="banner-title">Galería de Imágenes de la Fundación</h1>
+        <p class="banner-subtitle">Conoce los espacios físicos diseñados para el descanso, la convivencia y la recuperación integral de nuestros residentes.</p>
+      </div>
+    </div>
+
+    <div style="padding: 3rem 5%;">
+      <div class="back-btn-container">
+        <button class="btn-back" onclick="showScreen('galeria')">&#8592; Volver a Galería</button>
+      </div>
+
+      <div class="galeria-sub-grid">
+        <div class="story-card">
+          <div class="story-img-wrapper">
+            <img src="https://i.postimg.cc/zX2GKtm6/Chat-GPT-Image-4-sept-2026-05-51-13-p-m.png" alt="Entorno Principal de la Fundación">
+          </div>
+          <div class="story-body">
+            <span class="story-tag">Sede Principal</span>
+            <h3 class="story-title">Áreas Verdes y Exteriores</h3>
+            <p class="story-text">
+              Espacios al aire libre que promueven la desconexión del entorno urbano y favorecen el encuentro reflexivo y la tranquilidad.
+            </p>
+          </div>
+        </div>
+
+        <div class="story-card">
+          <div class="story-img-wrapper">
+            <img src="https://i.postimg.cc/J79KXFHP/Chat-GPT-Image-6-sept-2026-04-58-17-p-m.png" alt="Salones de Reunión y Terapia">
+          </div>
+          <div class="story-body">
+            <span class="story-tag">Salones de Encuentro</span>
+            <h3 class="story-title">Salas Terapéuticas</h3>
+            <p class="story-text">
+              Aulas y salones de terapia grupal e individual acondicionados para garantizar privacidad, confort y escucha activa.
+            </p>
+          </div>
+        </div>
+
+        <div class="story-card">
+          <div class="story-img-wrapper">
+            <img src="https://i.postimg.cc/zX2GKtm6/Chat-GPT-Image-4-sept-2026-05-51-13-p-m.png" alt="Áreas de Convivencia y Descanso">
+          </div>
+          <div class="story-body">
+            <span class="story-tag">Zonas de Descanso</span>
+            <h3 class="story-title">Espacios Comunes</h3>
+            <p class="story-text">
+              Zonas compartidas concebidas para fortalecer la convivencia diaria, el respeto mutuo y las dinámicas comunitarias.
             </p>
           </div>
         </div>
