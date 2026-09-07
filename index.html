@@ -43,7 +43,7 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Encabezado NAVEGACIÓN */
+    /* ENCABEZADO Y NAVEGACIÓN RESPONSIVA */
     .header {
       display: flex;
       justify-content: space-between;
@@ -53,18 +53,18 @@
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
     }
 
     .logo-container {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.8rem;
       cursor: pointer;
     }
 
     .main-logo {
-      height: 55px;
+      height: 50px;
       width: auto;
       object-fit: contain;
     }
@@ -77,7 +77,7 @@
     }
 
     .logo-text {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: 800;
       color: var(--olive-light);
       letter-spacing: 0.5px;
@@ -85,25 +85,64 @@
     }
 
     .logo-subtext {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 600;
       color: var(--text-dark);
-      margin-top: 0.25rem;
+      margin-top: 0.2rem;
       letter-spacing: 0.2px;
     }
 
+    /* Menú en Escritorio */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
     .nav-links a {
-      margin-left: 2rem;
       text-decoration: none;
       color: var(--text-dark);
       font-weight: 600;
-      font-size: 1.05rem;
+      font-size: 1rem;
       transition: color 0.3s ease;
       cursor: pointer;
     }
 
     .nav-links a:hover, .nav-links a.active {
       color: var(--accent-color);
+    }
+
+    /* Botón de Menú Hamburguesa para Móviles */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 21px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 1100;
+      padding: 0;
+    }
+
+    .menu-toggle span {
+      width: 100%;
+      height: 3px;
+      background-color: var(--primary-color);
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+
+    /* Animación de ícono menú hamburguesa activo */
+    .menu-toggle.active span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
     }
 
     /* Control de Visibilidad de Pantallas */
@@ -115,10 +154,10 @@
       display: block;
     }
 
-    /* Banner Principal HERO (Pantalla de Inicio) */
+    /* BANNER PRINCIPAL HERO (Pantalla de Inicio) */
     .hero-section {
       position: relative;
-      min-height: calc(100vh - 120px);
+      min-height: calc(100vh - 80px);
       display: flex;
       align-items: center;
       background-image: url('https://i.postimg.cc/zX2GKtm6/Chat-GPT-Image-4-sept-2026-05-51-13-p-m.png');
@@ -146,7 +185,7 @@
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
-      gap: 3rem;
+      gap: 2.5rem;
       align-items: center;
     }
 
@@ -155,7 +194,7 @@
     }
 
     .hero-title-main {
-      font-size: 5rem;
+      font-size: clamp(2.8rem, 6vw, 5rem);
       font-weight: 800;
       line-height: 1;
       letter-spacing: 1px;
@@ -163,15 +202,15 @@
     }
 
     .hero-acronym-meaning {
-      font-size: 1.5rem;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
       font-weight: 500;
       margin-top: 0.4rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       opacity: 0.95;
     }
 
     .hero-subtitle {
-      font-size: 1.2rem;
+      font-size: clamp(0.95rem, 1.8vw, 1.2rem);
       line-height: 1.6;
       max-width: 650px;
       opacity: 0.9;
@@ -182,13 +221,13 @@
       text-align: left;
       background: rgba(0, 0, 0, 0.45);
       backdrop-filter: blur(8px);
-      padding: 2.5rem;
+      padding: 2rem;
       border-radius: 8px;
       border: 1px solid rgba(255, 255, 255, 0.25);
     }
 
     .hero-right-title {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: 700;
       margin-bottom: 0.8rem;
       color: #ffffff;
@@ -198,30 +237,30 @@
     }
 
     .hero-right-subtitle {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       font-weight: 600;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
       color: #e0e0e0;
     }
 
     .hero-right-text {
-      font-size: 1.05rem;
+      font-size: 1rem;
       line-height: 1.6;
       color: #f0f0f0;
       font-weight: 400;
     }
 
-    /* Banners de Cabecera */
+    /* BANNERS DE CABECERA */
     .page-header-banner {
       width: 100%;
-      height: 220px;
+      min-height: 180px;
       background-image: url('https://i.postimg.cc/zX2GKtm6/Chat-GPT-Image-4-sept-2026-05-51-13-p-m.png');
       background-size: cover;
       background-position: center;
       position: relative;
       display: flex;
       align-items: center;
-      padding: 0 5%;
+      padding: 2.5rem 5%;
     }
 
     .banner-overlay {
@@ -245,7 +284,7 @@
     }
 
     .banner-pretitle {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       font-weight: 700;
       text-transform: uppercase;
       color: #38b6ff;
@@ -255,7 +294,7 @@
     }
 
     .banner-title {
-      font-size: 2.5rem;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
       font-weight: 800;
       line-height: 1.1;
       margin-bottom: 0.5rem;
@@ -263,16 +302,16 @@
     }
 
     .banner-subtitle {
-      font-size: 1.1rem;
+      font-size: clamp(0.9rem, 1.5vw, 1.1rem);
       max-width: 750px;
       opacity: 0.95;
       line-height: 1.5;
       font-weight: 400;
     }
 
-    /* Sección Sobre JATCET */
+    /* SECCIÓN SOBRE JATCET INICIO */
     .approach-section {
-      padding: 4rem 5% 2rem 5%;
+      padding: 3rem 5%;
       background-color: #ffffff;
     }
 
@@ -281,7 +320,7 @@
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      gap: 2.5rem;
       align-items: center;
     }
 
@@ -290,7 +329,7 @@
     }
 
     .approach-pretitle {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 700;
       text-transform: uppercase;
       color: var(--accent-color);
@@ -300,7 +339,7 @@
     }
 
     .approach-title {
-      font-size: 2.5rem;
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
       font-weight: 800;
       color: var(--primary-color);
       line-height: 1.2;
@@ -309,7 +348,7 @@
     .approach-card {
       background-color: var(--primary-color);
       color: #ffffff;
-      padding: 2.5rem;
+      padding: 2rem;
       border-radius: 8px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -321,15 +360,15 @@
     }
 
     .approach-card-text {
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       line-height: 1.7;
       color: #ffffff;
       font-weight: 400;
     }
 
-    /* Sección Valores */
+    /* SECCIÓN VALORES */
     .valores-section {
-      padding: 2rem 5% 2rem 5%;
+      padding: 2rem 5%;
       background-color: #ffffff;
     }
 
@@ -338,7 +377,7 @@
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 2.5rem;
+      gap: 2rem;
     }
 
     .valores-header {
@@ -354,7 +393,7 @@
 
     .valor-card {
       background-color: var(--bg-light);
-      padding: 2rem 1.8rem;
+      padding: 1.8rem;
       border-radius: 12px;
       border: 1px solid #e9ecef;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -383,7 +422,7 @@
     }
 
     .valor-card-title {
-      font-size: 1.5rem;
+      font-size: 1.35rem;
       font-weight: 700;
       color: var(--primary-color);
       margin-bottom: 0.8rem;
@@ -391,14 +430,14 @@
 
     .valor-card-text {
       color: var(--text-dark);
-      font-size: 1rem;
+      font-size: 0.95rem;
       line-height: 1.6;
       font-weight: 400;
     }
 
-    /* Sección Proceso */
+    /* SECCIÓN PROCESO */
     .proceso-section {
-      padding: 2rem 5% 2rem 5%;
+      padding: 2rem 5%;
       background-color: #ffffff;
     }
 
@@ -407,7 +446,7 @@
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 2.5rem;
+      gap: 2rem;
     }
 
     .proceso-header {
@@ -417,13 +456,13 @@
     .proceso-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
+      gap: 1.2rem;
       width: 100%;
     }
 
     .proceso-card {
       background-color: var(--bg-light);
-      padding: 2rem 1.5rem;
+      padding: 1.5rem;
       border-radius: 12px;
       border: 1px solid #e9ecef;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -439,30 +478,30 @@
 
     .proceso-card-badge {
       display: inline-block;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 700;
       color: #ffffff;
       background-color: var(--accent-color);
-      padding: 0.25rem 0.75rem;
+      padding: 0.2rem 0.6rem;
       border-radius: 20px;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
     }
 
     .proceso-card-title {
-      font-size: 1.4rem;
+      font-size: 1.25rem;
       font-weight: 700;
       color: var(--primary-color);
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.6rem;
     }
 
     .proceso-card-text {
       color: var(--text-dark);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       line-height: 1.5;
       font-weight: 400;
     }
 
-    /* Sección: Preguntas Frecuentes */
+    /* SECCIÓN PREGUNTAS FRECUENTES */
     .faq-section {
       padding: 2rem 5% 3rem 5%;
       background-color: #ffffff;
@@ -473,25 +512,24 @@
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 2.5rem;
-      text-align: center;
+      gap: 2rem;
     }
 
     .faq-header {
-      text-align: center;
+      text-align: left;
     }
 
     .faq-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+      gap: 1.5rem;
       width: 100%;
       text-align: left;
     }
 
     .faq-card {
       background-color: var(--bg-light);
-      padding: 2rem 2.2rem;
+      padding: 1.8rem;
       border-radius: 12px;
       border: 1px solid #e9ecef;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -513,7 +551,7 @@
     }
 
     .faq-question-title {
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       color: var(--primary-color);
       font-weight: 700;
       line-height: 1.35;
@@ -521,19 +559,19 @@
     }
 
     .faq-toggle-btn {
-      width: 32px;
-      height: 32px;
-      min-width: 32px;
+      width: 30px;
+      height: 30px;
+      min-width: 30px;
       border-radius: 50%;
       background-color: var(--accent-color);
       color: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 700;
       line-height: 1;
-      transition: background-color 0.3s ease, transform 0.3s ease;
+      transition: background-color 0.3s ease;
       user-select: none;
     }
 
@@ -552,21 +590,21 @@
     .faq-card.open .faq-answer {
       max-height: 500px;
       opacity: 1;
-      margin-top: 1.2rem;
-      padding-top: 1rem;
+      margin-top: 1rem;
+      padding-top: 0.8rem;
       border-top: 1px solid #e0e0e0;
     }
 
     .faq-answer-text {
       color: var(--text-dark);
-      font-size: 1rem;
+      font-size: 0.95rem;
       line-height: 1.6;
       font-weight: 400;
     }
 
-    /* SECCIÓN: GALERÍA MULTIMEDIA */
+    /* PANTALLA INDEPENDIENTE: GALERÍA MULTIMEDIA */
     .galeria-section {
-      padding: 2rem 5% 3rem 5%;
+      padding: 3rem 5%;
       background-color: #ffffff;
     }
 
@@ -580,7 +618,7 @@
 
     .galeria-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 1.5rem;
       width: 100%;
     }
@@ -596,7 +634,6 @@
       aspect-ratio: 16 / 9;
     }
 
-    /* Elemento de Galería Clicable */
     .galeria-item.clickable {
       cursor: pointer;
     }
@@ -625,9 +662,9 @@
       left: 0;
       width: 100%;
       padding: 0.8rem 1rem;
-      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
       color: #ffffff;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 600;
       pointer-events: none;
       display: flex;
@@ -637,16 +674,16 @@
 
     .galeria-caption-badge {
       background-color: var(--accent-color);
-      font-size: 0.75rem;
-      padding: 0.2rem 0.6rem;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
       border-radius: 12px;
       text-transform: uppercase;
       font-weight: 700;
     }
 
-    /* SECCIÓN: BANNER CTA */
+    /* BANNER CTA REUTILIZABLE */
     .cta-banner-section {
-      padding: 2rem 5% 4rem 5%;
+      padding: 2rem 5% 3rem 5%;
       background-color: #ffffff;
     }
 
@@ -657,7 +694,7 @@
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-      min-height: 220px;
+      min-height: 200px;
       display: flex;
       align-items: center;
       background-color: #1a1a1a;
@@ -688,11 +725,11 @@
       position: relative;
       z-index: 3;
       width: 100%;
-      padding: 2.5rem 3.5rem;
+      padding: 2rem 3rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
     .cta-banner-text {
@@ -701,17 +738,17 @@
     }
 
     .cta-banner-pretitle {
-      font-size: 1rem;
+      font-size: 0.9rem;
       font-weight: 700;
       text-transform: uppercase;
       color: #38b6ff;
       letter-spacing: 1.5px;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.3rem;
       display: block;
     }
 
     .cta-banner-title {
-      font-size: 2rem;
+      font-size: clamp(1.4rem, 3vw, 2rem);
       font-weight: 800;
       color: #ffffff;
       line-height: 1.25;
@@ -722,9 +759,9 @@
       background-color: var(--accent-color);
       color: #ffffff;
       font-family: var(--font-main);
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 700;
-      padding: 0.9rem 2.2rem;
+      padding: 0.8rem 2rem;
       border: none;
       border-radius: 8px;
       cursor: pointer;
@@ -739,13 +776,13 @@
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     }
 
-    /* Estructura para la sección SOBRE NOSOTROS */
+    /* PANTALLA: SOBRE NOSOTROS */
     .nosotros-layout {
-      max-width: 1350px;
+      max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 0.25fr 0.75fr;
-      gap: 2.5rem;
+      grid-template-columns: 0.3fr 0.7fr;
+      gap: 2rem;
       align-items: start;
       text-align: left;
     }
@@ -753,21 +790,20 @@
     .title-box {
       background-color: var(--bg-light);
       color: var(--text-dark);
-      padding: 2.5rem 1.5rem;
+      padding: 2rem 1.5rem;
       border-radius: 12px;
       border: 1px solid #e9ecef;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
       text-align: center;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      transition: border-color 0.3s ease;
     }
 
     .title-box:hover {
       border-color: var(--accent-color);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     }
 
     .title-box .page-title {
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 800;
       color: var(--primary-color);
       margin: 0;
@@ -783,13 +819,13 @@
     .cards-horizontal {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+      gap: 1.5rem;
       width: 100%;
     }
 
     .info-card {
       background-color: var(--bg-light);
-      padding: 2.2rem 2.5rem;
+      padding: 2rem;
       border-radius: 12px;
       border: 1px solid #e9ecef;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -803,7 +839,7 @@
     }
 
     .card-title {
-      font-size: 1.7rem;
+      font-size: 1.5rem;
       font-weight: 700;
       color: var(--primary-color);
       margin-bottom: 1rem;
@@ -829,7 +865,7 @@
 
     .card-text {
       color: var(--text-dark);
-      font-size: 1rem;
+      font-size: 0.98rem;
       line-height: 1.6;
       font-weight: 400;
     }
@@ -839,8 +875,8 @@
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
       text-align: left;
     }
 
@@ -860,7 +896,7 @@
 
     .story-img-wrapper {
       width: 100%;
-      height: 220px;
+      height: 200px;
       overflow: hidden;
     }
 
@@ -871,36 +907,36 @@
     }
 
     .story-body {
-      padding: 1.8rem;
+      padding: 1.5rem;
     }
 
     .story-tag {
       display: inline-block;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 700;
       color: var(--accent-color);
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
 
     .story-title {
-      font-size: 1.4rem;
+      font-size: 1.25rem;
       font-weight: 700;
       color: var(--primary-color);
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.6rem;
       line-height: 1.3;
     }
 
     .story-text {
-      font-size: 0.98rem;
+      font-size: 0.92rem;
       color: var(--text-dark);
       line-height: 1.6;
     }
 
     .back-btn-container {
       max-width: 1200px;
-      margin: 0 auto 2rem auto;
+      margin: 0 auto 1.5rem auto;
       text-align: left;
     }
 
@@ -911,9 +947,10 @@
       background-color: var(--bg-light);
       color: var(--primary-color);
       border: 1px solid var(--border-color);
-      padding: 0.6rem 1.2rem;
+      padding: 0.5rem 1rem;
       border-radius: 6px;
       font-weight: 600;
+      font-size: 0.9rem;
       cursor: pointer;
       transition: background-color 0.3s ease, border-color 0.3s ease;
     }
@@ -923,58 +960,58 @@
       border-color: var(--accent-color);
     }
 
-    /* Estructura para la sección CONTACTO */
+    /* PANTALLA: CONTACTO */
     .contacto-wrapper {
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 3rem;
+      gap: 2.5rem;
     }
 
     .contacto-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      gap: 2.5rem;
       align-items: start;
       text-align: left;
     }
 
     .contacto-card {
       background-color: var(--bg-light);
-      padding: 2.5rem;
+      padding: 2rem;
       border-radius: 12px;
       border: 1px solid #e9ecef;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     }
 
     .section-column-title {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: 800;
       color: var(--primary-color);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
       border-bottom: 2px solid var(--accent-color);
-      padding-bottom: 0.5rem;
+      padding-bottom: 0.4rem;
       display: inline-block;
     }
 
     .form-group {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
     }
 
     .form-group label {
       display: block;
       font-weight: 600;
-      margin-bottom: 0.5rem;
-      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
       color: var(--text-dark);
     }
 
     .form-control {
       width: 100%;
-      padding: 0.8rem 1rem;
+      padding: 0.75rem 0.9rem;
       font-family: var(--font-main);
-      font-size: 1rem;
+      font-size: 0.95rem;
       border: 1px solid var(--border-color);
       border-radius: 6px;
       background-color: #ffffff;
@@ -989,11 +1026,11 @@
 
     textarea.form-control {
       resize: vertical;
-      min-height: 140px;
+      min-height: 120px;
     }
 
     .char-counter {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       text-align: right;
       margin-top: 0.3rem;
@@ -1001,11 +1038,11 @@
 
     .submit-btn {
       width: 100%;
-      padding: 1rem;
+      padding: 0.9rem;
       background-color: var(--primary-color);
       color: #ffffff;
       font-family: var(--font-main);
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 700;
       border: none;
       border-radius: 6px;
@@ -1017,32 +1054,30 @@
       background-color: var(--accent-color);
     }
 
-    /* Lista de Información de Contacto */
     .contact-info-list {
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
-      margin-top: 1rem;
+      gap: 1.2rem;
+      margin-top: 0.8rem;
     }
 
     .contact-info-item h3 {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--accent-color);
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.2rem;
     }
 
     .contact-info-item p {
-      font-size: 1.05rem;
+      font-size: 0.98rem;
       color: var(--text-dark);
       line-height: 1.5;
       font-weight: 400;
     }
 
-    /* Sección Mapa Visítanos */
     .map-section {
       background-color: var(--bg-light);
-      padding: 2.5rem;
+      padding: 2rem;
       border-radius: 12px;
       border: 1px solid #e9ecef;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -1051,7 +1086,7 @@
 
     .map-container {
       width: 100%;
-      height: 400px;
+      height: 380px;
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -1063,96 +1098,140 @@
       border: 0;
     }
 
-    /* Pie de Página FOOTER */
+    /* PIE DE PÁGINA FOOTER */
     .footer {
       background-color: var(--bg-light);
       text-align: center;
-      padding: 2.5rem 1rem;
+      padding: 2rem 1rem;
       border-top: 1px solid #e9ecef;
     }
 
     .footer-motto {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: var(--primary-color);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
       letter-spacing: 0.5px;
     }
 
     .footer-copy {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
       font-weight: 400;
     }
 
-    /* Responsividad Adaptable */
+    /* MEDIA QUERIES PARA ADAPTABILIDAD RESPONSIVA CONTINUA */
     @media (max-width: 992px) {
-      .nosotros-layout, .contacto-layout {
+      .hero-container {
         grid-template-columns: 1fr;
         gap: 2rem;
       }
-      .valores-grid, .proceso-grid {
-        overflow-x: auto;
-        padding-bottom: 1rem;
+      .hero-right {
+        max-width: 650px;
+      }
+      .nosotros-layout {
+        grid-template-columns: 1fr;
+      }
+      .contacto-layout {
+        grid-template-columns: 1fr;
+      }
+      .valores-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .proceso-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
     @media (max-width: 768px) {
-      .hero-container, .approach-container, .cards-horizontal, .faq-grid {
+      /* Transformación a Menú Hamburguesa en Móviles */
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+      }
+
+      .nav-links.mobile-open {
+        max-height: 300px;
+        border-top: 1px solid #e9ecef;
+      }
+
+      .nav-links a {
+        width: 100%;
+        padding: 1rem 5%;
+        border-bottom: 1px solid #f0f0f0;
+      }
+
+      .approach-container, .cards-horizontal, .faq-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
       }
 
       .cta-banner-content {
         flex-direction: column;
         align-items: flex-start;
-        padding: 2rem;
+        padding: 1.8rem;
       }
 
-      .cta-banner-title {
-        font-size: 1.6rem;
-      }
-
-      .hero-title-main {
-        font-size: 3.5rem;
-      }
-
-      .hero-acronym-meaning {
-        font-size: 1.25rem;
-      }
-
-      .approach-title {
-        font-size: 2rem;
-      }
-
-      .banner-title {
-        font-size: 2rem;
+      .cta-banner-btn {
+        width: 100%;
+        text-align: center;
       }
 
       .map-container {
-        height: 300px;
+        height: 280px;
       }
+    }
 
-      .page-header-banner {
-        height: 180px;
+    @media (max-width: 480px) {
+      .valores-grid, .proceso-grid {
+        grid-template-columns: 1fr;
+      }
+      .contacto-card, .map-section {
+        padding: 1.2rem;
+      }
+      .hero-section {
+        padding: 2rem 5%;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Encabezado con Logo Principal, Texto JATCET Verde Oliva y Subtítulo -->
+  <!-- ENCABEZADO CON NAVEGACIÓN COMPLETA E INDEPENDIENTE -->
   <header class="header">
     <div class="logo-container" onclick="showScreen('inicio')">
-      <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="main-logo" width="150" height="55" loading="eager">
+      <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Logo Fundación JATCET" class="main-logo" width="150" height="50" loading="eager">
       <div class="logo-text-block">
         <span class="logo-text">JATCET</span>
         <span class="logo-subtext">Justo A Tiempo Creo En Ti</span>
       </div>
     </div>
-    <nav class="nav-links">
+
+    <!-- Menú Hamburguesa para vista en Celulares -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menú" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Enlaces con Botón Galería Incorporado -->
+    <nav class="nav-links" id="navLinks">
       <a id="nav-inicio" class="active" onclick="showScreen('inicio')">Inicio</a>
       <a id="nav-nosotros" onclick="showScreen('nosotros')">Nosotros</a>
+      <a id="nav-galeria" onclick="showScreen('galeria')">Galería</a>
       <a id="nav-contacto" onclick="showScreen('contacto')">Contacto</a>
     </nav>
   </header>
@@ -1160,12 +1239,10 @@
   <!-- PANTALLA 1: INICIO -->
   <main id="inicio" class="page-screen active">
     
-    <!-- Banner Principal Completo -->
+    <!-- Hero Banner -->
     <section id="hero" class="hero-section">
       <div class="hero-overlay"></div>
       <div class="hero-container">
-        
-        <!-- Costado Izquierdo: Marca y Subtítulo -->
         <div class="hero-left">
           <h1 class="hero-title-main">JATCET</h1>
           <p class="hero-acronym-meaning">Justo A Tiempo Creo En Ti</p>
@@ -1174,7 +1251,6 @@
           </p>
         </div>
 
-        <!-- Costado Derecho: Texto Complementario -->
         <div class="hero-right">
           <h2 class="hero-right-title">Nuestra Misión</h2>
           <p class="hero-right-subtitle">Recuperar salud, vínculos y esperanza.</p>
@@ -1182,11 +1258,10 @@
             Brindamos un espacio seguro para avanzar con acompañamiento continuo y apoyo profesional.
           </p>
         </div>
-
       </div>
     </section>
 
-    <!-- Sección Bajo el Banner: Sobre JATCET -->
+    <!-- Sobre JATCET -->
     <section id="sobre-jatcet" class="approach-section">
       <div class="approach-container">
         <div class="approach-left-content">
@@ -1329,44 +1404,7 @@
       </div>
     </section>
 
-    <!-- SECCIÓN: GALERÍA MULTIMEDIA INTERACTIVA -->
-    <section id="galeria" class="galeria-section">
-      <div class="galeria-container">
-        <div style="text-align: left;">
-          <span class="approach-pretitle">Multimedia</span>
-          <h2 class="approach-title">Conoce nuestra comunidad</h2>
-        </div>
-
-        <div class="galeria-grid">
-          <!-- Elemento 1: Video Oficial de la Fundación JATCET -->
-          <div class="galeria-item">
-            <iframe 
-              src="https://www.youtube.com/embed/yUQEm6-qoZU?start=139" 
-              title="FUNDACIÓN JATCET" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen>
-            </iframe>
-          </div>
-
-          <!-- Elemento 2: Imagen que REDIRIGE a la sección de Fotos e Historias -->
-          <div class="galeria-item clickable" onclick="showScreen('historias')">
-            <img src="https://i.postimg.cc/J79KXFHP/Chat-GPT-Image-6-sept-2026-04-58-17-p-m.png" alt="Espacios de Acompañamiento e Historias">
-            <div class="galeria-caption">
-              <span>Fotos e Historias de Vida</span>
-              <span class="galeria-caption-badge">Ver más</span>
-            </div>
-          </div>
-
-          <!-- Elemento 3: Imagen de Instalaciones -->
-          <div class="galeria-item">
-            <img src="https://i.postimg.cc/zX2GKtm6/Chat-GPT-Image-4-sept-2026-05-51-13-p-m.png" alt="Instalaciones Fundación JATCET">
-            <div class="galeria-caption">Nuestras Instalaciones</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- BANNER CTA BAJO GALERÍA -->
+    <!-- BANNER CTA BAJO INICIO -->
     <section class="cta-banner-section">
       <div class="cta-banner-container">
         <img src="https://i.postimg.cc/J79KXFHP/Chat-GPT-Image-6-sept-2026-04-58-17-p-m.png" alt="Fondo JATCET" class="cta-banner-bg-img">
@@ -1386,7 +1424,6 @@
   <!-- PANTALLA 2: SOBRE NOSOTROS -->
   <main id="nosotros" class="page-screen">
     
-    <!-- Banner de Cabecera -->
     <div class="page-header-banner">
       <div class="banner-overlay"></div>
       <div class="banner-content">
@@ -1396,16 +1433,12 @@
       </div>
     </div>
 
-    <!-- Contenido de Sobre Nosotros -->
-    <div style="padding: 3rem 4%;">
+    <div style="padding: 3rem 5%;">
       <div class="nosotros-layout">
-        
-        <!-- Costado Izquierdo: Título -->
         <div class="title-box">
           <h1 class="page-title">Sobre Nosotros</h1>
         </div>
 
-        <!-- Costado Derecho: Tarjetas de Misión y Visión -->
         <div class="nosotros-content">
           <div class="cards-horizontal">
             <div class="info-card">
@@ -1423,15 +1456,58 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </main>
 
-  <!-- PANTALLA NUEVA: FOTOS E HISTORIAS DE NUESTRA FUNDACIÓN -->
+  <!-- PANTALLA 3: GALERÍA (PANTALLA SEPARADA E INDEPENDIENTE) -->
+  <main id="galeria" class="page-screen">
+    
+    <div class="page-header-banner">
+      <div class="banner-overlay"></div>
+      <div class="banner-content">
+        <span class="banner-pretitle">Multimedia</span>
+        <h1 class="banner-title">Galería de nuestra Comunidad</h1>
+        <p class="banner-subtitle">Explora los registros audiovisuales, eventos e instalaciones de la Fundación JATCET.</p>
+      </div>
+    </div>
+
+    <section class="galeria-section">
+      <div class="galeria-container">
+        <div class="galeria-grid">
+          <!-- Video Institucional -->
+          <div class="galeria-item">
+            <iframe 
+              src="https://www.youtube.com/embed/yUQEm6-qoZU?start=139" 
+              title="FUNDACIÓN JATCET" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <!-- Imagen Redireccionable a Historias de Vida -->
+          <div class="galeria-item clickable" onclick="showScreen('historias')">
+            <img src="https://i.postimg.cc/J79KXFHP/Chat-GPT-Image-6-sept-2026-04-58-17-p-m.png" alt="Espacios de Acompañamiento e Historias">
+            <div class="galeria-caption">
+              <span>Fotos e Historias de Vida</span>
+              <span class="galeria-caption-badge">Ver más</span>
+            </div>
+          </div>
+
+          <!-- Imagen de las Instalaciones -->
+          <div class="galeria-item">
+            <img src="https://i.postimg.cc/zX2GKtm6/Chat-GPT-Image-4-sept-2026-05-51-13-p-m.png" alt="Instalaciones Fundación JATCET">
+            <div class="galeria-caption">Nuestras Instalaciones</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PANTALLA SUB-SECCIÓN: HISTORIAS DE LA FUNDACIÓN -->
   <main id="historias" class="page-screen">
     
-    <!-- Banner de Cabecera -->
     <div class="page-header-banner">
       <div class="banner-overlay"></div>
       <div class="banner-content">
@@ -1442,15 +1518,11 @@
     </div>
 
     <div style="padding: 3rem 5%;">
-      <!-- Botón de Retorno -->
       <div class="back-btn-container">
-        <button class="btn-back" onclick="showScreen('inicio')">&#8592; Volver al Inicio</button>
+        <button class="btn-back" onclick="showScreen('galeria')">&#8592; Volver a Galería</button>
       </div>
 
-      <!-- Galería de Historias y Fotografías -->
       <div class="historias-grid">
-        
-        <!-- Tarjeta 1 -->
         <div class="story-card">
           <div class="story-img-wrapper">
             <img src="https://i.postimg.cc/J79KXFHP/Chat-GPT-Image-6-sept-2026-04-58-17-p-m.png" alt="Encuentro Comunitario">
@@ -1464,7 +1536,6 @@
           </div>
         </div>
 
-        <!-- Tarjeta 2 -->
         <div class="story-card">
           <div class="story-img-wrapper">
             <img src="https://i.postimg.cc/zX2GKtm6/Chat-GPT-Image-4-sept-2026-05-51-13-p-m.png" alt="Espacios Terapéuticos">
@@ -1478,7 +1549,6 @@
           </div>
         </div>
 
-        <!-- Tarjeta 3 -->
         <div class="story-card">
           <div class="story-img-wrapper">
             <img src="https://i.postimg.cc/3xLmyC98/fundacion-logo-animado.gif" alt="Testimonios de Vida" style="object-fit: contain; padding: 1rem; background-color: #1a1a1a;">
@@ -1491,7 +1561,6 @@
             </p>
           </div>
         </div>
-
       </div>
     </div>
   </main>
@@ -1499,7 +1568,6 @@
   <!-- PANTALLA 4: CONTACTO -->
   <main id="contacto" class="page-screen">
     
-    <!-- Banner de Cabecera -->
     <div class="page-header-banner">
       <div class="banner-overlay"></div>
       <div class="banner-content">
@@ -1509,13 +1577,10 @@
       </div>
     </div>
 
-    <!-- Contenido de Contacto -->
     <div style="padding: 3rem 5%;">
       <div class="contacto-wrapper">
-        
         <div class="contacto-layout">
           
-          <!-- Formulario de Contacto -->
           <div class="contacto-card">
             <h2 class="section-column-title">Solicita Información</h2>
             
@@ -1543,7 +1608,6 @@
             </form>
           </div>
 
-          <!-- Información de Contacto -->
           <div class="contacto-card">
             <h2 class="section-column-title">Información de contacto</h2>
             
@@ -1573,7 +1637,6 @@
 
         </div>
 
-        <!-- Mapa Interactivo Corregido -->
         <div class="map-section">
           <h2 class="section-column-title">Visítanos</h2>
           <div class="map-container">
@@ -1597,7 +1660,7 @@
   </footer>
 
   <script>
-    // Navegación entre pantallas
+    // Cambio entre Pantallas
     function showScreen(screenId) {
       const screens = document.querySelectorAll('.page-screen');
       screens.forEach(screen => screen.classList.remove('active'));
@@ -1615,10 +1678,27 @@
         activeNav.classList.add('active');
       }
 
+      // Cerrar menú móvil al hacer clic
+      const navContainer = document.getElementById('navLinks');
+      const toggleBtn = document.getElementById('menuToggle');
+      if (navContainer.classList.contains('mobile-open')) {
+        navContainer.classList.remove('mobile-open');
+        toggleBtn.classList.remove('active');
+      }
+
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Contador de caracteres en el formulario
+    // Toggle para menú hamburguesa
+    function toggleMenu() {
+      const navContainer = document.getElementById('navLinks');
+      const toggleBtn = document.getElementById('menuToggle');
+      
+      navContainer.classList.toggle('mobile-open');
+      toggleBtn.classList.toggle('active');
+    }
+
+    // Contador de caracteres en formulario
     function updateCharCount(textarea) {
       const charCountSpan = document.getElementById('char-count');
       if (charCountSpan) {
@@ -1626,7 +1706,7 @@
       }
     }
 
-    // Desplegable Preguntas Frecuentes
+    // Desplegable de FAQ
     function toggleFaq(card) {
       const isOpen = card.classList.contains('open');
       const btn = card.querySelector('.faq-toggle-btn');
